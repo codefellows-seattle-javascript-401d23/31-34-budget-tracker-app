@@ -9,10 +9,10 @@ class CategoryItem extends React.Component {
     const { category, categoryUpdate, categoryDestroy } = this.props;
     return (
       <div className='category-item'>
-        <h4>{category.name}</h4>
+        <h4>{category.name.toUpperCase()}</h4>
         <p>Budget allotted: ${category.budget}</p>
         <button onClick={() => categoryDestroy(category)}> remove </button>
-        <CategoryForm onComplete/>
+        <CategoryForm onComplete={categoryUpdate} category={category}/>
       </div>
     );
   }

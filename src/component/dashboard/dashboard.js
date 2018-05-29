@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as categoryActions from '../../action/category';
 import CategoryForm from '../category-form/category-form';
-// import item
+import CategoryItem from '../category-item/category-item';
 
 class Dashboard extends React.Component {
   render() {
@@ -12,6 +12,9 @@ class Dashboard extends React.Component {
       <div>
         <h1>Budget Tracker</h1>
         <CategoryForm onComplete={categoryCreate}/>
+        {
+          categories.map((category, i) => (<CategoryItem category={category} key={i}/>))
+        }
       </div>
     );
   }
