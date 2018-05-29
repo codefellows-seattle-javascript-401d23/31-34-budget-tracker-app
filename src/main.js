@@ -13,7 +13,7 @@ const middleware = {};
 const store = createStore(sectionsReducer, composeWithDevTools(applyMiddleware(...middleware));
 
 // rendering application --------------------------------------------------------------
-const container = document.createElement('div');
+const appContainer = document.createElement('div');
 document.body.appendChild(appContainer);
 
 // Josh - Notice that we Wrap the App in the Provider!  provider holds the store (when assigned
