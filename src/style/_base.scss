@@ -1,0 +1,19 @@
+@import 'vars';
+
+html, body {
+  background: $background;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+
+  div {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+button {
+  color: $background;
+  background: $main-secondary;
+  border: 1px solid $main-secondary;
+}

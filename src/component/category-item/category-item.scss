@@ -1,0 +1,17 @@
+@import '../../style/vars';
+
+.category-item {
+  background: $background;
+  margin: 0;
+  padding: 20px;
+}
+
+.category-item p {
+  background: $background;
+  color: $main-secondary;
+  margin: 0;
+  padding: 0;
+}
+.category-item h4 {
+  maring: 0;
+}

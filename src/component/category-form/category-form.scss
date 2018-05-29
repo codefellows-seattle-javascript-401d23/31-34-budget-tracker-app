@@ -1,0 +1,21 @@
+@import '../../style/vars';
+
+form {
+  background: $main-primary;
+  text-align: center;
+  padding: 10px;
+
+  input, textarea {
+    border: 1px solid $main-primary;
+  }
+  input {
+    width: 200px;
+    margin: 10px;
+  }
+  textarea {
+    display: block;
+    width: 420px;
+    height: 100px;
+    margin: 10px auto;
+  }
+}

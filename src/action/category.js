@@ -5,6 +5,7 @@ const create = category => ({
   payload: {
     name: category.name,
     budget: category.budget,
+    description: category.description,
     id: uuid(),
     timestamp: new Date(),
   },

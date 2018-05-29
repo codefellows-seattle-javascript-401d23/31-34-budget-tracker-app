@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category';
+import './category-item.scss';
 
 class CategoryItem extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class CategoryItem extends React.Component {
       <div className='category-item'>
         <h4>{category.name.toUpperCase()}</h4>
         <p>Budget allotted: ${category.budget}</p>
+        <p>Description: {category.description}</p>
         <button onClick={() => categoryDestroy(category)}> remove </button>
         <CategoryForm onComplete={categoryUpdate} category={category}/>
       </div>

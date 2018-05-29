@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from '../../utils/autobind';
+import './category-form.scss';
 
 const defaultState = {
   name: '',
@@ -38,8 +39,14 @@ class CategoryForm extends React.Component {
         <input
           type='number'
           name='budget'
-          placeholder='budget allotted'
+          placeholder='$'
           value={this.state.budget}
+          onChange={this.handleChange}
+        />
+        <textarea
+          name='description'
+          value={this.state.description}
+          placeholder='description of budget item'
           onChange={this.handleChange}
         />
         <button type='submit'>{buttonText}</button>
