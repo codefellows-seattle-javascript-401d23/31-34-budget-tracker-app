@@ -4,7 +4,7 @@
 
 ## Project Description
 
-* in this app a category should containsfollowing properties
+* in this app a category contains the following properties
   * `id` a uuid
   * `timestamp` a date from when the category was created
   * `name` a string that is the name of the category
