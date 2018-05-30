@@ -9,7 +9,6 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Route exact path='/' component={Dashboard} />
-            <h1>Welcome to Mikes Budget Tracker!</h1>
           </div>
         </BrowserRouter>
         </div>
