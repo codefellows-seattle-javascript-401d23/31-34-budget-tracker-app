@@ -1,0 +1,23 @@
+@import 'vars';
+
+body {
+  background: $background-color;
+  font-family: sans-serif;
+  color: $font-color;
+}
+
+a {
+  color: $font-color;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.category-form {
+  margin-left: 25%;
+}
+
+.category {
+  margin-left: 10px;
+}
