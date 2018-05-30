@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autobind from '../../utils/autobind';
+import './expense-form.scss';
 
 const emptyState = {
   name: '',
@@ -23,22 +24,23 @@ export default class ExpenseForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
-    this.props.onComplete({
+    this.setState(this.props.expense ? this.state : emptyState);
+    return this.props.onComplete({
       ...this.state,
       categoryId,
     });
-    this.setState(this.props.expense ? this.state : emptyState);
   }
 
   render() {
     const { expense } = this.props;
+    const showHide = this.props.show ? 'expense-form display-block' : 'expense-form display-none';
     const buttonText = expense ? 'update expense' : 'create expense';
     return (
-      <form className='expense-form' onSubmit={this.handleSubmit}>
+      <form className={showHide} onSubmit={this.handleSubmit}>
         <input
           type='text'
           name='name'
-          placeholder='expense name'
+          placeholder='name'
           value={this.state.name}
           onChange={this.handleChange}
           required
@@ -51,9 +53,10 @@ export default class ExpenseForm extends React.Component {
           onChange={this.handleChange}
           required
         />
-        <textarea
+        <input
+          type='text'
           name='description'
-          placeholder='description of expense'
+          placeholder='description'
           value={this.state.description}
           onChange={this.handleChange}
         />
@@ -67,4 +70,5 @@ ExpenseForm.propTypes = {
   expense: PropTypes.object,
   category: PropTypes.object,
   onComplete: PropTypes.func,
+  show: PropTypes.bool,
 };

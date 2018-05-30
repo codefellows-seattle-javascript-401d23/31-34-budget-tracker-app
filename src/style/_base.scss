@@ -16,6 +16,11 @@ button {
   color: $background;
   background: $main-secondary;
   border: 1px solid $main-secondary;
+  border-radius: 10px;
+}
+
+button:hover {
+  border: 1px solid $background;
 }
 
 h1 {

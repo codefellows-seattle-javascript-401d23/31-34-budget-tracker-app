@@ -19,19 +19,25 @@ class CategoryItem extends React.Component {
       expenseCreate,
     } = this.props;
     const categoryExpenses = expenses[category.id];
-    const showModal = () => categoryUpdate({ ...category, editing: true });
-    const hideModal = () => categoryUpdate({ ...category, editing: false });
+    const showCategoryModal = () => categoryUpdate({ ...category, editing: true });
+    const hideCategoryModal = () => categoryUpdate({ ...category, editing: false });
+    const showExpenseForm = () => categoryUpdate({ ...category, addExp: true });
+    const hideExpenseForm = () => categoryUpdate({ ...category, addExp: false });
     return (
       <div className='category-item'>
-        <button onClick={() => categoryDestroy(category)}> remove </button>
-        <button onClick={showModal}> update </button>
+        <button onClick={() => categoryDestroy(category)}> delete </button>
+        <button onClick={showCategoryModal}> update </button>
+        {
+          category.addExp ? <button onClick={hideExpenseForm}> done </button> :
+            <button onClick={showExpenseForm}> add expenses </button>
+        }
         <h4>{category.name.toUpperCase()}</h4>
         <p>Budget allotted: ${category.budget}</p>
-        { category.description && <p><em>{category.description}</em></p> }
-        <Modal show={category.editing} handleClose={hideModal}>
+        {category.description && <p><em>{category.description}</em></p>}
+        <Modal show={category.editing} handleClose={hideCategoryModal}>
           <CategoryForm onComplete={categoryUpdate} category={category}/>
         </Modal>
-        <ExpenseForm category={ category } onComplete={ expenseCreate }/>
+        <ExpenseForm show={category.addExp} category={category} onComplete={expenseCreate}/>
         <div className='expense-list'>
           {
             categoryExpenses.map(expense => <ExpenseItem expense={expense} key={expense.id}/>)

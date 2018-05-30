@@ -4,10 +4,12 @@
   background: $background;
   margin: 0;
   padding: 20px;
+  background: $accent-secondary;
+  border-radius: 10px;
+  min-height: 100px;
 }
 
 .category-item p {
-  background: $background;
   color: $main-secondary;
   margin: 5px;
   padding: 0;
@@ -18,7 +20,7 @@
 
 .category-item button {
   margin: 5px;
-  background: $accent-secondary;
-  border: 1px solid $accent-secondary;
+  //background: $main-secondary;
+  //border: 1px solid $accent-secondary;
   float: right;
 }
