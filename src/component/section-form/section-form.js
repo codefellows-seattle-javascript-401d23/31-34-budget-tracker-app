@@ -27,10 +27,19 @@ class SectionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState);
   }
   //-------------------------------------------------------------------------------------------
   // LIFE CYCLE HOOKS
   //-------------------------------------------------------------------------------------------
+
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.section) {
+      // Zachary - it's like this.setState is happening
+      return nextProps.section;
+    }
+    return {};
+  }
   render() {
     const buttonText = this.props.section ? 'Update' : 'Create';
     return (

@@ -14,7 +14,7 @@ class Landing extends React.Component {
       <div className='landing'>
         <SectionForm onComplete={sectionCreate}/>
         {
-          sections.map((currentSection, i) => <Section section={currentSection} key={i}/>)
+          sections.sections.map((currentSection, i) => <Section section={currentSection} key={i}/>)
         }
       </div>
     );
@@ -22,7 +22,7 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  sections: PropTypes.array,
+  sections: PropTypes.object,
   sectionCreate: PropTypes.func,
 };
 //-------------------------------------------------------------------------------------------
