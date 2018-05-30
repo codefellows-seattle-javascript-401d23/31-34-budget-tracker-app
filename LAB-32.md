@@ -31,9 +31,6 @@
 ###### action creaters
 * you should create an action creater for each interaction supported by your expenses reducer
 
-###### store
-* in `lib/store.js` export a function that will return a redux store from your app reducer
-
 ##### Components
 Create the following components and structure them according to the following diagram.  
 ``` 
