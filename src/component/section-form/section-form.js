@@ -1,8 +1,3 @@
-// THIS IS NOT FINISHED!!!!!!!!!!!!!!!!
-
-
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/index';
@@ -16,7 +11,7 @@ class SectionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.section || defaultState;
-    autoBind.call(this, sectionForm);
+    autoBind.call(this, SectionForm);
   }
   // ----------------MEMBER FUNCTIONS------------------
   handleChange(event) {
@@ -49,7 +44,6 @@ class SectionForm extends React.Component {
         </form>
     );
   }
-
 }
 
 SectionForm.propTypes = {

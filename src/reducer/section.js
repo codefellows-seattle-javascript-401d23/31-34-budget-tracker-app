@@ -12,4 +12,4 @@ export default (state = emptyState, { type, payload }) => {
     default:
       return state;   // Josh - this is also previousState
   }
-}
+};

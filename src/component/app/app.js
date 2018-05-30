@@ -6,11 +6,11 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <BrouserRouter>
+        <BrowserRouter>
           <div>
             <Route exact path='/' component={Landing} />
           </div>
-        </BrouserRouter>
+        </BrowserRouter>
       </div>
     );
   }
