@@ -1,0 +1,15 @@
+@import '../../style/vars';
+
+h1 {
+  background: $main-secondary;
+  color: $background;
+  padding: 20px;
+}
+
+.app-info {
+  background: $accent-primary;
+  margin: 0;
+  padding: 20px;
+  color: $background;
+  font-size: 12px;
+}
