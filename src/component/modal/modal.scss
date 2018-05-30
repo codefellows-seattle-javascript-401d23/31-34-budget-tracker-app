@@ -21,10 +21,9 @@
     background: $background;
 
     input {
-      width: 30%;
-    }
-    input, textarea {
+      width: 80%;
       border: 1px solid $accent-primary;
+      display: block;
     }
   }
 

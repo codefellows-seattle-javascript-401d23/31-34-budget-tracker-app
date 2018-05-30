@@ -6,6 +6,7 @@ import './category-form.scss';
 const defaultState = {
   name: '',
   budget: '',
+  description: '',
 };
 
 class CategoryForm extends React.Component {
@@ -22,7 +23,8 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onComplete(this.state);
+    this.setState(this.props.category ? this.state : defaultState);
+    return this.props.onComplete(this.state);
   }
 
   render() {
@@ -32,21 +34,24 @@ class CategoryForm extends React.Component {
         <input
           type='text'
           name='name'
-          placeholder='category name'
+          placeholder='budget category'
           value={this.state.name}
           onChange={this.handleChange}
+          required
         />
         <input
           type='number'
           name='budget'
-          placeholder='$'
+          placeholder='total budget'
           value={this.state.budget}
           onChange={this.handleChange}
+          required
         />
-        <textarea
+        <input
+          type='text'
+          placeholder='description'
           name='description'
           value={this.state.description}
-          placeholder='description of budget item'
           onChange={this.handleChange}
         />
         <button type='submit'>{buttonText}</button>

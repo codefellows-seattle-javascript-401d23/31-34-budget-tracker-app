@@ -1,6 +1,6 @@
 # Documentation
 
-A basic React app that allows users to create, update, and remove budget item categories.
+A basic React app that allows users to create, update, and remove budget item categories and expense items.
 
 This app uses React, Redux, Babel, Sass, prop-types, webpack, and uuid.
 

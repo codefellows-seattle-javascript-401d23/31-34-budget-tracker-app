@@ -16,18 +16,20 @@ class Dashboard extends React.Component {
           In the form below, write the category of your expense, how much you would like to
           allocate to that expense, and a small description of that category.</p>
         <CategoryForm onComplete={categoryCreate}/>
-        {
-          categories.length > 0 ?
-          categories.map((category, i) => (<CategoryItem category={category} key={i}/>)) :
-            <p><em>No budget items to display</em></p>
-        }
+        <div className='category-list'>
+          {
+            categories.length > 0 ?
+              categories.map((category, i) => (<CategoryItem category={category} key={i}/>)) :
+              <p><em>No budget items to display</em></p>
+          }
+        </div>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return { categories: state };
+  return { categories: state.categories };
 };
 
 const mapDispatchToProps = (dispatch) => {
