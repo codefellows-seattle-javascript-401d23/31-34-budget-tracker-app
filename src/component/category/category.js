@@ -9,13 +9,13 @@ class Category extends React.Component {
     const {
       category,
       key,
-      categoryRemove,
+      categoryDestroy,
       categoryUpdate,
     } = this.props;
     return (
       <div className='category' key={key}>
       <h1> { category.name }</h1>
-        <button onClick={() => categoryRemove(category)}> Delete </button>
+        <button onClick={() => categoryDestroy(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
       </div>
     );
@@ -25,13 +25,13 @@ class Category extends React.Component {
 Category.propTypes = {
   category: PropTypes.object,
   key: PropTypes.number,
-  categoryRemove: PropTypes.func,
+  categoryDestroy: PropTypes.func,
   categoryUpdate: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    categoryRemove: data => dispatch(categoryActions.remove(data)),
+    categoryDestroy: data => dispatch(categoryActions.destroy(data)),
     categoryUpdate: data => dispatch(categoryActions.update(data)),
   };
 };

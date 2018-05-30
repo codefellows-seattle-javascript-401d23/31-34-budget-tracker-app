@@ -15,9 +15,9 @@ const update = category => ({
   payload: category,
 });
 
-const remove = category => ({
-  type: 'CATEGORY_REMOVE',
+const destroy = category => ({
+  type: 'CATEGORY_DESTROY',
   payload: category,
 });
 
-export { create, update, remove };
+export { create, update, destroy };

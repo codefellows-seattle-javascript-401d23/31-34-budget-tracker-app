@@ -17,7 +17,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Mike Castor\'s 401d23 lab28 Todo App',
+    title: 'Mike Castor\'s 401d23 lab31 Budget Tracker App',
   }),
   new MiniCssPlugin({
     filename: '[name].[hash].css',
