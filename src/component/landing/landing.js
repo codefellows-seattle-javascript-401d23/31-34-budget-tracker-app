@@ -14,7 +14,7 @@ class Landing extends React.Component {
         <div className='landing'>
           <SectionForm onComplete={sectionCreate}/>
           {
-            sections.map((currentSection,i) => <Section={currentSection} key={i})/>
+            sections.map((currentSection, i) => <Section section={currentSection} key={i}/>)
           }
         </div>
     );
