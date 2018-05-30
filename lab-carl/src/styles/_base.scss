@@ -1,0 +1,67 @@
+@import 'vars';
+
+html, body {
+  background: $background-color;
+  box-sizing: border-box;
+  padding-top: 25px;
+}
+
+section, div {
+  text-align: center;
+}
+
+p, h1, h2, ul {
+  color: $font-color;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 100;
+  color: rgb(48, 107, 235);
+}
+
+strong {
+  font-weight: 700;
+}
+
+hr {
+  width: 500px;
+  margin-top: 25px;
+  height: 3px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: $hover-color; 
+}
+
+h1, h2, ul {
+  text-align: center;
+}
+
+.error {
+  color: $error;
+}
+
+.error  input {
+  border: 3px solid red;
+}
+
+.search-form {
+  color: $search-form;
+}
+
+a {
+  color: $font-color;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.category-display * {
+  display: inline-block;
+}
