@@ -10,6 +10,8 @@ class ExpenseItem extends React.Component {
     return (
       <div className='expense-item'>
         <h5>{ expense.name }</h5>
+        <p>{ expense.price }</p>
+        { expense.description && <p><em>{ expense.description }</em></p> }
         <button onClick={() => expenseDestroy(expense)}> remove </button>
         <ExpenseForm expense={ expense } onComplete={ expenseUpdate }/>
       </div>
