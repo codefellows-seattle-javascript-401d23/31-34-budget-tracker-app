@@ -8,12 +8,11 @@ class CategoryItem extends React.Component {
   render() {
     const {
       category,
-      key,
       categoryDestroy,
       categoryUpdate,
     } = this.props;
     return (
-      <div className = 'category' key = { key }>
+      <div className = 'category' key = { category.id }>
         <h1> { category.name } </h1>
         <button onClick = {() => categoryDestroy(category)}> Destroy </button>
         <CategoryForm category = { category } onComplete = { categoryUpdate }/>
