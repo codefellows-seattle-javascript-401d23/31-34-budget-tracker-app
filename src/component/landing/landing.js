@@ -6,7 +6,7 @@ import SectionForm from '../section-form/section-form';
 import Section from '../section/section';
 
 
-class Landing extends React.Component {
+class Landing extends React.Component{
   render() {
     // Josh in the component, our state is linked AS PROPS
     const { sections, sectionCreate } = this.props;

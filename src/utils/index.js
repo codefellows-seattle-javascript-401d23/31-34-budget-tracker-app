@@ -1,4 +1,4 @@
-export default function autoBind(classCompontent) {
+export default function autoBind(classComponent) {
   const classMethods = Object.getOwnPropertyNames(classComponent.prototype);
   classMethods.forEach((method) => {
     if (method.startsWith('handle')) {

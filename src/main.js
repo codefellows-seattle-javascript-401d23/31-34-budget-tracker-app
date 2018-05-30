@@ -17,4 +17,4 @@ const appContainer = document.createElement('div');
 document.body.appendChild(appContainer);
 
 // Josh - Notice that we Wrap the App in the Provider!  provider holds the store (when assigned
-ReactDom.render(<Provider store={{store}}><App/></Provider>, appContainer);
+ReactDom.render(<Provider store={store}><App/></Provider>, appContainer);
