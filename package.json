@@ -2,6 +2,7 @@
   "name": "31-34-budget-tracker-app",
   "version": "1.0.0",
   "description": "",
+  "main": "webpack.common.js",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
     "test": "jest --coverage"
@@ -47,6 +48,7 @@
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.4.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^7.0.1",
