@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest"
+    "test": "eslint . && jest"
   },
   "jest": {
     "moduleNameMapper": {

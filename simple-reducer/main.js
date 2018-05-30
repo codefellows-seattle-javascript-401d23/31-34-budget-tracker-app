@@ -8,7 +8,7 @@ const { createStore } = require('redux');
 const DEFAULT_STATE = 0; // Zachary - Important
 // Zachary - a reducer is just a function
 // const counterReducer = (previousState = DEFAULT_STATE, { type, payload }) => {
-const counterReducer = (previousState = DEFAULT_STATE, actio) => {
+const counterReducer = (previousState = DEFAULT_STATE, action) => {
 
   const { type, payload = 1 } = action; // Zachary - The default value is important
 
@@ -16,13 +16,13 @@ const counterReducer = (previousState = DEFAULT_STATE, actio) => {
   // Zachary - What types of actions will I support?
   //        INCREMENT_COUNTER
   //      DECREMENT_COUNTER
-  switch(type) {
-  case 'INCREMENT_COUNTER':
-    return previousState + payload;
-  case 'DECREMENT_COUNTER':
-    return previousState - payload;
-  default: // Zachary - this is  REQUIRED
-    return previousState;
+  switch (type) {
+    case 'INCREMENT_COUNTER':
+      return previousState + payload;
+    case 'DECREMENT_COUNTER':
+      return previousState - payload;
+    default: // Zachary - this is  REQUIRED
+      return previousState;
   }
 };
 //-------------------------------------------------------------------------------------------

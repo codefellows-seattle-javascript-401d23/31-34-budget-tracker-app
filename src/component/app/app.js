@@ -8,7 +8,7 @@ class App extends React.Component {
       <div className='app'>
         <BrowserRouter>
           <div>
-            <Route exact path='/' component={Landing} />>
+            <Route exact path='/' component={Landing} />
           </div>
         </BrowserRouter>
       </div>

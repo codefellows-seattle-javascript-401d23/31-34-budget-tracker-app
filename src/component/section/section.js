@@ -19,21 +19,21 @@ class Section extends React.Component {
         <SectionForm section={section} onComplete={sectionUpdate}/>
       </div>
     );
-    }
   }
+}
 
-  Section.propTypes = {
-    section: PropTypes.object,
-    key: PropTypes.number,
-    sectionRemove: PropTypes.func,
-    sectionUpdate: PropTypes.func,
+Section.propTypes = {
+  section: PropTypes.object,
+  key: PropTypes.number,
+  sectionRemove: PropTypes.func,
+  sectionUpdate: PropTypes.func,
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sectionRemove: data => dispatch(sectionActions.remove(data)),
+    sectionUpdate: data => dispatch(sectionActions.update(data)),
   };
+};
 
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      sectionRemove: data => dispatch(sectionActions.remove(data)),
-      sectionUpdate: data => dispatch(sectionActions.update(data)),
-    };
-  };
-
-  export default connect(null, mapDispatchToProps)(Section);
+export default connect(null, mapDispatchToProps)(Section);

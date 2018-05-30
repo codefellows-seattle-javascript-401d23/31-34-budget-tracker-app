@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils';
@@ -17,21 +19,21 @@ class SectionForm extends React.Component {
   //-------------------------------------------------------------------------------------------
   // MEMBER FUNCTIONS
   //-------------------------------------------------------------------------------------------
-handleChange(event) {
-  const { value } = event.target;
-  this.setState({ title: value });
-}
+  handleChange(event) {
+    const { value } = event.target;
+    this.setState({ title: value });
+  }
 
-handleSubmit(event) {
-  event.preventDefault();
-  this.props.onComplete(this.state);
-}
-//-------------------------------------------------------------------------------------------
-// LIFE CYCLE HOOKS
-//-------------------------------------------------------------------------------------------
-render() {
-  const buttonText = this.props.section ? 'Update' : 'Create';
-  return (
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onComplete(this.state);
+  }
+  //-------------------------------------------------------------------------------------------
+  // LIFE CYCLE HOOKS
+  //-------------------------------------------------------------------------------------------
+  render() {
+    const buttonText = this.props.section ? 'Update' : 'Create';
+    return (
     <form
       onSubmit={this.handleSubmit}
       className='section-form'>
@@ -42,12 +44,12 @@ render() {
         placeholder='Title'
         value={this.state.title}
         onChange={this.handleChange}
-      />
-      <button type='submit'>{buttonText} Section</button>
+      />  
+    <button type='submit'>{buttonText} Section</button>
 
-      </form>
-  );
-}
+  </form>
+    );
+  }
 }
 SectionForm.propTypes = {
   onComplete: PropTypes.func,

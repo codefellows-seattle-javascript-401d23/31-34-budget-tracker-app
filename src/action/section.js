@@ -5,6 +5,7 @@ const create = ({ title }) => ({
     title,
     id: Math.random(),
     createdOn: new Date(),
+    budget: 'number',
   },
 });
 
