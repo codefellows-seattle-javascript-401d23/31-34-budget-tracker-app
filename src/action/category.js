@@ -1,25 +1,26 @@
 'use strict';
+import uuid from 'uuid/v4';
 
 // Josh - we are creating a set of functions to simplify creating actions.
 // these will return an object. this is a best practice
 const create = ({ title }) => ({
-  type: 'SECTION_CREATE',
+  type: 'CATEGORY_CREATE',
   payload: {
     title,
-    id: Math.random(),
+    id: uuid(),
     createdOn: new Date(),
   }
 });
 
-const update = section => ({
-  type: 'SECTION_UPDATE',
-  payload: section,
+const update = category => ({
+  type: 'CATEGORY_UPDATE',
+  payload: category,
 
 });
 
-const remove = section => ({
-  type: 'SECTION_REMOVE',
-  payload: section,
+const remove = category => ({
+  type: 'CATEGORY_REMOVE',
+  payload: category,
 });
 
 export { create, update, remove };

@@ -17,7 +17,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: '401d23 Budget Tracker',
+    title: 'UA Budget Tracker',
   }),
   new MiniCssPlugin({
     filename: '[name].[hash].css',

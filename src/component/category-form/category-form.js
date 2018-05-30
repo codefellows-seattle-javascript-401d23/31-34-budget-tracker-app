@@ -7,11 +7,11 @@ const defaultState = {
   title:'',
 };
 
-class SectionForm extends React.Component {
+class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.section || defaultState;
-    autoBind.call(this, SectionForm);
+    this.state = this.props.category || defaultState;
+    autoBind.call(this, CategoryForm);
   }
   // ----------------MEMBER FUNCTIONS------------------
   handleChange(event) {
@@ -27,28 +27,28 @@ class SectionForm extends React.Component {
   // --------------------LIFECYCLE HOOKS-------------------
 
   render() {
-    const buttonText = this.props.section ? 'Update' : 'Create';
+    const buttonText = this.props.category ? 'Update' : 'Create';
     return(
         <form
         onSubmit={this.handleSubmit}
-        className='section-form'>
+        className='category-form'>
 
           <input
             type='text'
             name='title'
-            placeholder='Title'
+            placeholder='Category'
             value={this.state.title}
             onChange={this.handleChange}
             />
-          <button type='submit'>{buttonText} Section</button>
+          <button type='submit'>{buttonText} Category</button>
         </form>
     );
   }
 }
 
-SectionForm.propTypes = {
+CategoryForm.propTypes = {
   onComplete: PropTypes.func,
-  section: PropTypes.object, // Josh - this is used to update sections
+  category: PropTypes.object, // Josh - this is used to update categories
 };
 
-export default SectionForm;
+export default CategoryForm;
