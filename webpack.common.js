@@ -12,5 +12,44 @@ webpackConfig.entry = `${__dirname}/src/main.js`;
 webpackConfig.output = {
   filename: '[name].[hash].css',
   path: `${__dirname}/build`,
-  publicPath: process.end.CDN_URL,
+  publicPath: process.env.CDN_URL,
 };
+
+webpackConfig.plugins = [
+  new HtmlWebpackPlugin({
+    title: 'Lab 31 Budget Tracker',
+  }),
+  new MiniCssPlugin({
+    filename: '[name].[hash].css',
+  }),
+];
+
+webpackConfig.module = {};
+webpackConfig.module.rules = [
+  {
+    test: /\.(png|svg|jpg|gif)$/,
+    use: [
+      'file-loader',
+    ],
+  },
+  {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['env', 'stage-0', 'react'],
+        plugins: ['transform-react-jsx-source'],
+        cacheDirectory: true,
+      },
+    },
+  },
+  {
+    test: /\.scss$/,
+    use: [
+      MiniCssPlugin.loader,
+      'css-loader',
+      'sass-loader',
+    ],
+  },
+];
