@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import Modal from '../modal/modal';
 import * as categoryActions from '../../action/category';
-import ExpenseForm from '../'
+import ExpenseForm from '../ex'
 
 import './category-item.scss';
 
