@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
-import * as categoryAction from '../../action/section';
+import * as categoryAction from '../../action/category';
 
 class Category extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Category extends React.Component {
       categoryUpdate,
     } = this.props;
     return (
-      <div className='section' key={key}>
+      <div className='category' key={key}>
         <h1> { category.title }</h1>
         <button onClick={() => categoryRemove(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
@@ -31,8 +31,8 @@ Category.propTypes = {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    sectionRemove: data => dispatch(categoryAction.remove(data)),
-    sectionUpdate: data => dispatch(categoryAction.update(data)),
+    categoryRemove: data => dispatch(categoryAction.remove(data)),
+    categoryUpdate: data => dispatch(categoryAction.update(data)),
   };
 };
 

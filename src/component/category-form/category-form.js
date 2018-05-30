@@ -9,7 +9,7 @@ const defaultState = {
 class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.section || defaultState;
+    this.state = this.props.category || defaultState;
     autoBind.call(this, CategoryForm);
   }
 
@@ -19,11 +19,11 @@ class CategoryForm extends React.Component {
   }
 
   render() {
-    const buttonText = this.props.section ? 'Update' : 'Create';
+    const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
         onSubmit={this.handleSubmit}
-        className='section-form'>
+        className='category-form'>
 
         <input
           type='text'
@@ -32,7 +32,7 @@ class CategoryForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
-        <button type='submit'>{buttonText} Section</button>
+        <button type='submit'>{buttonText} Category</button>
       </form>
     );
   }
@@ -40,7 +40,7 @@ class CategoryForm extends React.Component {
 
 CategoryForm.propTypes = {
   _onComplete: PropTypes.func,
-  section: PropTypes.object,
+  category: PropTypes.object,
 };
 
 export default CategoryForm;
