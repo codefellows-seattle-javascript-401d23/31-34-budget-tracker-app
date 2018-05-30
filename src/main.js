@@ -5,10 +5,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './component/app/app';
-import categoriesReducer from './reducer/category';
+import reducer from './reducer/index';
 
 const middleware = {};
-const store = createStore(categoriesReducer, composeWithDevTools(applyMiddleware(...middleware)));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 const app = document.createElement('div');
 document.body.appendChild(app);
