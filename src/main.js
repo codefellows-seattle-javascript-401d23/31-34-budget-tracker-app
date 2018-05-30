@@ -10,7 +10,7 @@ import'./style/main.scss';
 
 // setting up store -------------------------------------------------------------------
 const middleware = {};
-const store = createStore(sectionsReducer, composeWithDevTools(applyMiddleware(...middleware));
+const store = createStore(sectionsReducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 // rendering application --------------------------------------------------------------
 const appContainer = document.createElement('div');
