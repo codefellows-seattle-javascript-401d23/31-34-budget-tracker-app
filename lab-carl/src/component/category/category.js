@@ -4,20 +4,33 @@ import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category';
 
+import ExpenseForm from '../expense-form/expense-form';
+import Expense from '../expense/expense';
+import * as expenseActions from '../../action/expense';
+
 class Category extends React.Component {
   render() {
     const {
+      expenses,
+      expenseCreate,
       category,
       key,
       categoryDestroy,
       categoryUpdate,
     } = this.props;
+
+    const categoryExpenses = expenses[category.id];
     return (
       <div className='category' key={key}>
         <h3> Category: <strong>{category.name}</strong> | Budget: <strong>${category.budget}</strong></h3>
-        <div className='category-display'>
+        <div className='item-display'>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
         <button className='delete-button' onClick={() => categoryDestroy(category)}> Delete </button>
+        </div>
+        <hr/>
+        <ExpenseForm category={category} onComplete={expenseCreate} />
+        <div className='expense-list'>
+          { categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />) }
         </div>
       </div>
     );
@@ -25,17 +38,24 @@ class Category extends React.Component {
 }
 
 Category.propTypes = {
+  expenses: PropTypes.object,
+  expenseCreate: PropTypes.func,
   category: PropTypes.object,
   key: PropTypes.number,
   categoryDestroy: PropTypes.func,
   categoryUpdate: PropTypes.func,
 };
 
+const mapStateToProps = state => ({
+  expenses: state.expenses,
+});
+
 const mapDispatchToProps = (dispatch) => {
   return {
+    expenseCreate: data => dispatch(expenseActions.create(data)),
     categoryDestroy: data => dispatch(categoryActions.destroy(data)),
     categoryUpdate: data => dispatch(categoryActions.update(data)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Category);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

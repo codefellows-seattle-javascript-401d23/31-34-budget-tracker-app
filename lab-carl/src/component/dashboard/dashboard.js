@@ -8,11 +8,12 @@ import Category from '../category/category';
 class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate} = this.props;
+    console.log(categories);
     return (
       <div className='dashboard'>
         <CategoryForm onComplete={categoryCreate}/>
         {
-          categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
+          categories.categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
         }
       </div>
     );
@@ -20,7 +21,7 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
-  categories: PropTypes.array,
+  categories: PropTypes.object,
   categoryCreate: PropTypes.func,
 };
 

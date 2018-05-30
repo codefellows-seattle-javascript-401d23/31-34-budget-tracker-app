@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './component/app/app';
-import categoryReducer from './reducer/category';
+import categoryReducer from './reducer/main';
 import './styles/main.scss';
 
 const middlware = {};
