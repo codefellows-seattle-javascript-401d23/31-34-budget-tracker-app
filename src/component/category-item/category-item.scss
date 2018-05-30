@@ -1,0 +1,24 @@
+@import '../../style/vars';
+
+.category-item {
+  background: $background;
+  margin: 0;
+  padding: 20px;
+}
+
+.category-item p {
+  background: $background;
+  color: $main-secondary;
+  margin: 5px;
+  padding: 0;
+}
+.category-item h4 {
+  margin: 5px;
+}
+
+.category-item button {
+  margin: 5px;
+  background: $accent-secondary;
+  border: 1px solid $accent-secondary;
+  float: right;
+}
