@@ -4,7 +4,13 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "watch": "webpack-dev-server --config webpack.dev.js"
+  },
+  "jest": {
+    "moduleNamemapper": {
+      "\\.scss$": "<rootDir>/src/__test__/mock-asset.js"
+    }
   },
   "keywords": [],
   "author": "",
