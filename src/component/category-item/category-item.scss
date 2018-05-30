@@ -1,0 +1,43 @@
+@import '../../style/vars';
+
+.category-item {
+  background: $background;
+  margin: 5px;
+  padding: 20px;
+  background: $accent-secondary;
+  border-radius: 10px;
+}
+
+.category-item p {
+  margin: 5px;
+  padding: 0;
+}
+.category-item h4 {
+  margin: 5px;
+}
+
+.category-item button {
+  margin: 5px;
+  float: right;
+}
+
+.expense-list {
+  text-align: center;
+  min-height: 30px;
+  width: 100%;
+  margin: 10px;
+}
+
+.category-budget {
+  text-align: center;
+}
+
+.category-budget p {
+  display: inline-block;
+  background: $background;
+  border-radius: 10px;
+  width: 35%;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid $accent-primary;
+}

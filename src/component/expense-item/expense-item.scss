@@ -1,0 +1,16 @@
+@import '../../style/vars';
+
+.expense-item {
+  background: $background;
+  width: 25%;
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid $main-secondary;
+  padding: 5px 10px;
+  margin: 5px;
+
+  button {
+    font-size: 10px;
+    display: block;
+  }
+}
