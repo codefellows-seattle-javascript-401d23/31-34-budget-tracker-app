@@ -21,31 +21,34 @@ class CategoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState);
   }
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
-      <form
-        onSubmit = { this.handleSubmit }
-        className = 'category-form'>
+      <div>
+        <h1>Budget Tracking Application</h1>
+        <form className = 'category-form'
+          onSubmit = { this.handleSubmit }>
 
-        <input
-          type = 'text'
-          name = 'name'
-          placeholder = 'Name'
-          value = { this.state.name }
-          onChange = { this.handleChange }
-        />
-        <input
-          type = 'number'
-          name = 'budget'
-          placeholder = 'Budget Amount'
-          value = {this.state.budget}
-          onChange = {this.handleChange}
-        />
-        <button type = 'submit'> { buttonText } Category </button>
-      </form>
+          <input
+            type = 'text'
+            name = 'name'
+            placeholder = 'Name'
+            value = { this.state.name }
+            onChange = { this.handleChange }
+          />
+          <input
+            type = 'number'
+            name = 'budget'
+            placeholder = 'Budget Amount'
+            value = {this.state.budget}
+            onChange = {this.handleChange}
+          />
+          <button type = 'submit'> { buttonText } Category </button>
+        </form>
+      </div>
     );
   }
 }

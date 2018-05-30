@@ -14,9 +14,9 @@ class CategoryItem extends React.Component {
     } = this.props;
     return (
       <div className = 'category' key = { key }>
-        <h1> { category.name } </h1>
-        <button onClick = {() => categoryDestroy(category)}> Destroy </button>
+        <h1> { category.name }: ${ category.budget } </h1>
         <CategoryForm category = { category } onComplete = { categoryUpdate }/>
+        <button onClick = {() => categoryDestroy(category)}> Destroy </button>
       </div>
     );
   }
