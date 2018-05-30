@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Modal from '../modal/modal';
 import ExpenseForm from '../expense-form/expense-form';
 import * as expenseActions from '../../action/expense';
+import './expense-item.scss';
 
 class ExpenseItem extends React.Component {
   render() {
@@ -12,10 +13,10 @@ class ExpenseItem extends React.Component {
     const hideModal = () => expenseUpdate({ ...expense, editing: false });
     return (
       <div className='expense-item'>
-        <button onClick={() => expenseDestroy(expense)}> delete </button>
-        <button onClick={showModal}> update </button>
         <h5>{expense.name}</h5>
-        <p>Price: {expense.price}</p>
+        <p>${expense.price}</p>
+        <button onClick={() => expenseDestroy(expense)}> x </button>
+        <button onClick={showModal}> update </button>
         {expense.description && <p><em>{ expense.description }</em></p>}
         <Modal show={expense.editing} handleClose={hideModal}>
           <ExpenseForm show={expense.editing} expense={expense} onComplete={expenseUpdate}/>

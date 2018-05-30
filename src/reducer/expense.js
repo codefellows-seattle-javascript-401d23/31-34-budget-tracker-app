@@ -9,7 +9,7 @@ export default (state = emptyState, { type, payload }) => {
   switch (type) {
     case 'CATEGORY_CREATE':
       return { ...state, [payload.id]: [] };
-    case 'CATEGORY_REMOVE':
+    case 'CATEGORY_DESTROY':
       updatedState = { ...state };
       delete updatedState[payload.id];
       return updatedState;

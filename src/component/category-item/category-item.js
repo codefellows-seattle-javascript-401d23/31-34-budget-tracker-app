@@ -18,7 +18,14 @@ class CategoryItem extends React.Component {
       expenses,
       expenseCreate,
     } = this.props;
+    let budgetRemaining;
     const categoryExpenses = expenses[category.id];
+    if (categoryExpenses) {
+      const budgetUsed = categoryExpenses
+        .map(expense => expense.price)
+        .reduce((acc, curr) => Number(acc) + Number(curr), 0);
+      budgetRemaining = category.budget - budgetUsed;
+    }
     const showCategoryModal = () => categoryUpdate({ ...category, editing: true });
     const hideCategoryModal = () => categoryUpdate({ ...category, editing: false });
     const showExpenseForm = () => categoryUpdate({ ...category, addExp: true });
@@ -42,6 +49,9 @@ class CategoryItem extends React.Component {
           {
             categoryExpenses.map(expense => <ExpenseItem expense={expense} key={expense.id}/>)
           }
+        </div>
+        <div className='category-budget-total'>
+          <p>BUDGET REMAINING: ${budgetRemaining}</p>
         </div>
       </div>
     );
