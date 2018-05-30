@@ -34,7 +34,7 @@ export default class ExpenseForm extends React.Component {
   render() {
     const { expense } = this.props;
     const showHide = this.props.show ? 'expense-form display-block' : 'expense-form display-none';
-    const buttonText = expense ? 'update expense' : 'create expense';
+    const buttonText = expense ? 'update' : 'add';
     return (
       <form className={showHide} onSubmit={this.handleSubmit}>
         <input

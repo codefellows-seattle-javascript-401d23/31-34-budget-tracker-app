@@ -39,7 +39,6 @@ class CategoryItem extends React.Component {
             <button onClick={showExpenseForm}> add expenses </button>
         }
         <h4>{category.name.toUpperCase()}</h4>
-        <p>Budget allotted: ${category.budget}</p>
         {category.description && <p><em>{category.description}</em></p>}
         <Modal show={category.editing} handleClose={hideCategoryModal}>
           <CategoryForm onComplete={categoryUpdate} category={category}/>
@@ -50,8 +49,9 @@ class CategoryItem extends React.Component {
             categoryExpenses.map(expense => <ExpenseItem expense={expense} key={expense.id}/>)
           }
         </div>
-        <div className='category-budget-total'>
-          <p>BUDGET REMAINING: ${budgetRemaining}</p>
+        <div className='category-budget'>
+          <p>allotted: ${category.budget}</p>
+          <p>remaining: ${budgetRemaining}</p>
         </div>
       </div>
     );
