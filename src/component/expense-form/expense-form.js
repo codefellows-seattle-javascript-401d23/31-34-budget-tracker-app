@@ -47,4 +47,4 @@ ExpenseForm.propTypes = {
   onComplete: PropTypes.func,
   category: PropTypes.object,
   expense: PropTypes.object,
-}:
+};
