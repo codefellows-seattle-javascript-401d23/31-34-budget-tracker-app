@@ -9,9 +9,16 @@
 .category-item p {
   background: $background;
   color: $main-secondary;
-  margin: 0;
+  margin: 5px;
   padding: 0;
 }
 .category-item h4 {
-  margin: 0;
+  margin: 5px;
+}
+
+.category-item button {
+  margin: 5px;
+  background: $accent-secondary;
+  border: 1px solid $accent-secondary;
+  float: right;
 }

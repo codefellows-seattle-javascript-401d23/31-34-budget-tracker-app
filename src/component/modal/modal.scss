@@ -14,12 +14,30 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 5px solid $main-secondary;
+  }
+
+  .modal-main form {
+    background: $background;
+
+    input {
+      width: 30%;
+    }
+    input, textarea {
+      border: 1px solid $accent-primary;
+    }
   }
 
   .modal-button {
     float: right;
     width: 25px;
     margin: 5px 5px;
+    background: $main-secondary;
+    border: 1px solid $main-secondary;
+  }
+  .category-form button {
+    background: $main-secondary;
+    border: 1px solid $main-secondary;
   }
 }
 

@@ -9,20 +9,15 @@ import './category-item.scss';
 class CategoryItem extends React.Component {
   render() {
     const { category, categoryUpdate, categoryDestroy } = this.props;
-
     const showModal = () => categoryUpdate({ ...category, editing: true });
     const hideModal = () => categoryUpdate({ ...category, editing: false });
-    // const updateAndClose = (updatedNote) => {
-    //   handleUpdateNote({ ...updatedNote, id: note.id, editing: false });
-    // };
-
     return (
       <div className='category-item'>
+        <button onClick={() => categoryDestroy(category)}> remove </button>
+        <button onClick={showModal}> update </button>
         <h4>{category.name.toUpperCase()}</h4>
         <p>Budget allotted: ${category.budget}</p>
         <p>Description: {category.description}</p>
-        <button onClick={() => categoryDestroy(category)}> remove </button>
-        <button onClick={showModal}> update </button>
         <Modal show={category.editing} handleClose={hideModal}>
           <CategoryForm onComplete={categoryUpdate} category={category}/>
         </Modal>

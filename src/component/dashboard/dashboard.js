@@ -12,12 +12,14 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h1>budget tracker</h1>
-        <p>Budget Tracker allows you to keep track of all your expenses. In the form
-        below, just input the category of your expense, how much you would like to
-        allocate to that expense, and a small description of that category.</p>
+        <p className='app-info'>Budget Tracker allows you to keep track of all your expenses.
+          In the form below, write the category of your expense, how much you would like to
+          allocate to that expense, and a small description of that category.</p>
         <CategoryForm onComplete={categoryCreate}/>
         {
-          categories.map((category, i) => (<CategoryItem category={category} key={i}/>))
+          categories.length > 0 ?
+          categories.map((category, i) => (<CategoryItem category={category} key={i}/>)) :
+            <p><em>No budget items to display</em></p>
         }
       </div>
     );
