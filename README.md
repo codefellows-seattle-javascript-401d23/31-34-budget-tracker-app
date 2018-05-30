@@ -1,83 +1,32 @@
-401 JS --  Lab 31 Budget Tracker
-===
+# Lab 31: Budget Tracker
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a pull request from your working branch to the master branch of your own forked repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  
-## Requirements  
-#### Configuration  
-Your lab directory must include  
-* **README.md** -- with a documention about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.common.js** -- with webpack config
-* **webpack.dev.js** -- with webpack config
-* **src/** -- containing the front end code
-* **src/main.js** -- containing the entire app
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+# Overview
 
-## Feature Tasks 
-#### Category 
-* in this app a category should contain at least the following properties
-  * `id` a uuid
-  * `timestamp` a date from when the category was created
-  * `name` a string that is the name of the category
-  * `budget` a number that is the total amount of $ in the category 
-  * feel free to add more to your categories if you want
+This is a lab assignment from Code Fellows 401 - Javascript. The objective was to build a simple Budget Tracker App with React components and Redux for state management. The completed project contains a route to dashboard page where a user can enter a category budget item by name and budget amount.  Onclick the category item is saved to the state of the application and renders into a list of category items below.  Once a category is added to the state of the application, a user can double click to delete the item removing it from the state of the application.  
 
-#### redux
-###### reducer
-* create a category reducer in your your reducer directory
-* this reducer should support the following interactions 
-  * `CATEGORY_CREATE`
-  * `CATEGORY_UPDATE`
-  * `CATEGORY_DESTORY`
+## Getting Started
 
-###### action creaters
-* you should create an action creater for each interaction supported by your category reducer
+In order to get started with this code please fork and clone the repo. You will need a number of dependencies in order to run this project. See the package.json for a list of dependencies. This project runs via a webpack build. There is a script that will give you a development version of the project, npm run watch. This script enables webpack-dev-server which hot reloads the build based on changes to the code and will open a local version of the project in your browser.
 
-#### Components
-Create the following components and structure them according to the following diagram.  
-```
-Provider
-  App 
-    BrowserRouter
-      Route / Dashboard
-        CategoryForm -- for creating categories
-        [CategoryItem]
-           CategoryForm  -- for updating categories
-```
+## Architecture
 
-###### App Component 
-The App component should setup the single page applicaion routes
+This project is built using Javascript ES6 with transpilation using Babel. The code is bundled via webpack. 
+- Main.js contains an entry point to the React Application and contains the store which holds the application state.
+- Reducer/category.js:  This module contains the the reducer function that takes in the previous state and returns a new application state.  It can create a category, update a category or destroy a category.
+- Action/category.js:  This module contains the action functions which are part of the reducer.  It defines the create, update and destroy reducer functions.
+- App.js: this component that contains a route to dashboard and is a static component. 
+- Dashboard.js:  This module connects to Redux via a connect function and exports the mapStateToProps and mapDisPatchToProps functions.  It also displays the rendered category form and categories.
+- Category-form.js:  This component contains a class CategoryForm which contains a form that allow's users to input a category name and budget amount which is rendered on the dashboard component.  It also contains a handleSubmit and handleChange function which allows input from the form buttons to change the state of the application via the reducer functions.
+- Category/category.js:  This component contains the category item which can be created via the categoryForm.
+ 
+## Change Log
 
-###### Dashboard Component 
-* should be displayed on the `/` route
-* should use react-redux's `connect` to map state and dispatchable methods to props
-* should display a `CategoryForm` for adding categories to the app state
-* should display a `CategoryItem` for each category in the app state
+- 05-29-2018 12:30pm - 2:00pm - Built wire frame and mocked the component architecture
+- 05-23-2018 4:15pm - 6:00pm - Built the static rendering portion of the components 
+- 05-23-2018 6:30pm - 8:00pm - built in state and categoryForm
+- 05-24-2018 9:00pm - 10:30pm - All functionality working by 10:30pm.
+- 05-24-2018 7:30am - 08:30am - added documentation
 
-###### CategoryForm Component
-* should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForms State when the form is submitted
-* should support an optional `category` prop that will initialize the state of the form
+## Credits and Collaborations
 
-###### CategoryItem Component
-* should display the category's name and budget
-* should receive a category prop from Dashboard
-* should display a delete button
-  * `onClick` the category should be removed from the application state
-* should display a CategoryForm  
-  * `onComplete` the form should update the component in the application state
-
-##  Documentation  
-Write a description of the project in your README.md
+Thanks Vinicio Sanchez for the demo code.
