@@ -14,7 +14,7 @@ class Category extends React.Component {
     } = this.props;
     return (
       <div className='category' key={key}>
-        <h1> { category.title }</h1>
+        <h1> { category.name }</h1>
         <button onClick={() => categoryRemove(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
       </div>

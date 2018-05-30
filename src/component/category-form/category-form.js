@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import autoBind from '../../utils';
 
 const defaultState = {
-  title: '',
+  name: '',
 };
 
 class CategoryForm extends React.Component {
@@ -14,6 +14,11 @@ class CategoryForm extends React.Component {
   }
 
   handleChange(event) {
+    const { value } = event.target;
+    this.setState({ name: value });
+  }
+
+  handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
   }
@@ -27,9 +32,9 @@ class CategoryForm extends React.Component {
 
         <input
           type='text'
-          name='title'
-          placeholder={'Title'}
-          value={this.state.title}
+          name='name'
+          placeholder={'Name'}
+          value={this.state.name}
           onChange={this.handleChange}
         />
         <button type='submit'>{buttonText} Category</button>
