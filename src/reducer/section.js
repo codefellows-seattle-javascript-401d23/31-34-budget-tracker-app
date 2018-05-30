@@ -1,4 +1,4 @@
-const emptystate = [];
+const emptyState = [];
 
 export default (state = emptyState, { type, payload }) => {
   // do syntax validation here (not during today's demo)
