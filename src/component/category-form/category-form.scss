@@ -1,0 +1,15 @@
+@import '../../style/vars';
+
+form {
+  background: $main-primary;
+  text-align: center;
+  padding: 10px;
+
+  input {
+    width: 25%;
+    margin: 5px;
+    border: 1px solid $main-primary;
+    border-radius: 10px;
+    padding: 5px;
+  }
+}
