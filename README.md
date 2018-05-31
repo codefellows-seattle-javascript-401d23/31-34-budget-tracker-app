@@ -3,6 +3,7 @@ Josiah Green
 Version 1.0.0
 
 #### Overview 
+
 This is a React App that allows users to create a budget for a category, then list additional content for their expenses. The user can add, update, or delete these entries.
 
 #### Getting Started
