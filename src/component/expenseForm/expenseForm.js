@@ -31,7 +31,7 @@ export default class ExpenseForm extends React.Component {
     const buttonText = expense ? 'Update' : 'Create';
 
     return (
-      <form className='expenseForm' onSubmit={this.handleSubmit}>
+      <form className="expenseForm" onSubmit={this.handleSubmit}>
         <input
         type="text"
         name="content"

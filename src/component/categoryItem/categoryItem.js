@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CategoryForm from '../categoryForm/categoryForm';
 import * as categoryActions from '../../action/category';
 import ExpenseForm from './../expenseForm/expenseForm';
-import Expense from '../expenseItem/expenseItem';
+import ExpenseItem from '../expenseItem/expenseItem';
 import * as expenseActions from '../../action/expense';
 
 class Category extends React.Component {
@@ -21,12 +21,12 @@ class Category extends React.Component {
     const categoryExpenses = expenses[category.id];
     return (
       <div className='category' key={key}>
-        <h1> { category.title } : ${ category.budget } </h1>
+        <h1> { category.title } : ${ category.budget }</h1>
         <button onClick={() => categoryDestroy(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
         <ExpenseForm category={category} onComplete={expenseCreate} />
-        <div className='expenseList'>
-          {categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />)}
+        <div className="expense-list">
+          { categoryExpenses.map(expense => <ExpenseItem expense={expense} key={expense.id} />) }
         </div>
       </div>
     );
@@ -42,7 +42,9 @@ Category.propTypes = {
   categoryUpdate: PropTypes.func,
 };
 
-const mapStateToProps = state => ({ expenses: state.expenses });
+const mapStateToProps = state => ({ 
+  expenses: state.expenses,
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {

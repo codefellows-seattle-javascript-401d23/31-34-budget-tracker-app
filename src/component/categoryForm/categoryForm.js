@@ -7,7 +7,6 @@ const defaultState = {
   budget: 0,
 };
 
-
 class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +21,14 @@ class CategoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState);
+  }
+
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.category) {
+      return nextProps.category;
+    }
+    return defaultState;
   }
 
   render() {
@@ -29,7 +36,7 @@ class CategoryForm extends React.Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className='category-form'>
+        className='categoryForm'>
 
         <input
           type='text'
