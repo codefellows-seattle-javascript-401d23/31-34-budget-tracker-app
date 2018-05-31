@@ -10,12 +10,12 @@ import * as expenseActions from '../../action/expense';
 class Category extends React.Component {
   render() {
     const {
-      expenses,
-      expenseCreate,
       category,
       key,
       categoryDestroy,
       categoryUpdate,
+      expenses,
+      expenseCreate,
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
@@ -25,7 +25,7 @@ class Category extends React.Component {
         <button onClick={() => categoryDestroy(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
         <ExpenseForm category={category} onComplete={expenseCreate} />
-        <div className="expense-list">
+        <div className="expenseList">
           { categoryExpenses.map(expense => <ExpenseItem expense={expense} key={expense.id} />) }
         </div>
       </div>
