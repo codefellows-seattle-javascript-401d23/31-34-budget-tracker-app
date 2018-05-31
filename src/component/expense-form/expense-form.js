@@ -15,7 +15,8 @@ class ExpenseForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
@@ -63,3 +64,5 @@ ExpenseForm.propTypes = {
   category: PropTypes.object,
   expense: PropTypes.object,
 };
+
+export default ExpenseForm;

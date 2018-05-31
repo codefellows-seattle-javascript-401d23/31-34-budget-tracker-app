@@ -7,11 +7,11 @@ import CategoryItem from '../category-item/category-item';
 
 class Dashboard extends React.Component {
   render() {
-    const { categories, categoryCreate } = this.props;
+    const { category, categoryCreate } = this.props;
     return (
       <div className = 'dashboard'>
         <CategoryForm onComplete = { categoryCreate }/> {
-          categories.map((currentCategory, i) => 
+          category.map((currentCategory, i) => 
           <CategoryItem category = { currentCategory } key = { i }/>)
         }
       </div>
@@ -20,13 +20,13 @@ class Dashboard extends React.Component {
 }
 
 Dashboard.propTypes = {
-  categories: PropTypes.array,
+  category: PropTypes.array,
   categoryCreate: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
   return {
-    categories: state,
+    category: state.category,
   };
 };
 
