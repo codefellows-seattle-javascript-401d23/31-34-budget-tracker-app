@@ -2,7 +2,8 @@
 
 ### Budget Tracker Application
 
-This application provides a template for a user to record their budget based on separate categories. Once created, budgets will show in a list with their category name, following by the budget allocated to that category. List items will also show an option to either update the category name or budget, as well as a destroy option which will allow the client to remove the category from the list.
+This application provides a template for a user to record their budget based on separate categories. Once created, budgets will show in a list with their category name, following by the budget allocated to that category. List items will also show an option to either update the category name or budget, as well as a destroy option which will allow the client to remove the category from the list. 
+New categories will also have a one to many relationship with expenses, which can be created, updated, or deleted once categories are created.
 
 ### Tools
 

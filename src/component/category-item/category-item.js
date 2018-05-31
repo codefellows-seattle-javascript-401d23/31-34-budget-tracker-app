@@ -17,7 +17,6 @@ class CategoryItem extends React.Component {
       expenseCreate,
     } = this.props;
 
-    console.log(expenses);
     const categoryExpense = expenses[category.id];
     return (
       <div className = 'category' key = { category.id }>
