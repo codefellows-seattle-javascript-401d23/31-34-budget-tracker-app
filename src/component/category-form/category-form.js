@@ -39,7 +39,7 @@ class CategoryForm extends React.Component {
       <form
         onSubmit={this.handleSubmit}
         className='category-form'>
-
+        <br/><br/>
         <input
           type='text'
           name='name'
