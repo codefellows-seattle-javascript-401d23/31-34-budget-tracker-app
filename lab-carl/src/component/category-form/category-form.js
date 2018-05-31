@@ -14,22 +14,14 @@ class CategoryForm extends React.Component {
     autoBind.call(this, CategoryForm);
   }
 
-  handleNameChange(event) {
-    const { value } = event.target;
-    this.setState({ name: value });
-  }
-
-  handleBudgetChange(event) {
-    const { value } = event.target;
-    this.setState({ budget: value });
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState(previousState => {
-    return this.state = defaultState;
-    // this.props.category ? this.props.category : 
-    });
+    this.setState(this.props.category ? this.state : defaultState);
     return this.props.onComplete(this.state);
   }
 
@@ -44,7 +36,7 @@ class CategoryForm extends React.Component {
           name='name'
           placeholder='Category Name'
           value={this.state.name}
-          onChange={this.handleNameChange}
+          onChange={this.handleChange}
           />
 
           <input
@@ -52,7 +44,7 @@ class CategoryForm extends React.Component {
           name='budget'
           placeholder='Category Budget'
           value={this.state.budget}
-          onChange={this.handleBudgetChange}
+          onChange={this.handleChange}
           />
           <button type='submit'>{buttonText}</button>
         </form>

@@ -8,7 +8,6 @@ import Category from '../category/category';
 class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate} = this.props;
-    console.log(categories);
     return (
       <div className='dashboard'>
         <CategoryForm onComplete={categoryCreate}/>

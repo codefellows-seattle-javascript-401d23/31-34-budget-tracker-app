@@ -4,7 +4,7 @@ import autoBind from './../../utils/utils';
 
 const emptyState = { 
   name: '', 
-  price: 0,
+  price: '',
 };
 
 export default class ExpenseForm extends React.Component {
@@ -14,27 +14,19 @@ export default class ExpenseForm extends React.Component {
     autoBind.call(this, ExpenseForm);
   }
 
-  handleNameChange(event) {
-    this.setState({ name: event.target.value });
-  }
-
-  handlePriceChange(event) {
-    this.setState({ price: event.target.value });
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
     const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
-    this.setState(previousState => {
-      return this.state = emptyState;
-      // this.props.category ? this.props.category : 
-      });
-    // this.setState(emptyState);
+    this.setState(this.props.expense ? this.state : emptyState);
     return this.props.onComplete({
       ...this.state,
       categoryId,
     });
-  
   }
 
   render() {
@@ -50,15 +42,15 @@ export default class ExpenseForm extends React.Component {
           type='text'
           name='name'
           placeholder='Expense'
-          value={this.state.content}
-          onChange={this.handleNameChange}
+          value={this.state.name}
+          onChange={this.handleChange}
         />
         <input 
           type='number'
           name='price'
           placeholder='Price'
-          value={this.state.content}
-          onChange={this.handlePriceChange}
+          value={this.state.price}
+          onChange={this.handleChange}
         />
         <button type='submit'> {buttonText} </button>
       </form>
