@@ -1,10 +1,11 @@
 import uuid from 'uuid/v4';
 
-export const createAction = ({ name, categoryID }) => ({
+export const createAction = ({ name, price, categoryId }) => ({
   type: 'EXPENSE_CREATE',
   payload: {
     name,
-    categoryID,
+    price,
+    categoryId,
     id: uuid(),
   },
 });

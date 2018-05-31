@@ -4,7 +4,7 @@ import autoBind from '../../utils';
 
 const defaultState = {
   name: '',
-  // budget: '',
+  budget: '',
 };
 
 class CategoryForm extends React.Component {
@@ -16,7 +16,6 @@ class CategoryForm extends React.Component {
 
   handleChange(event) {
     const { value } = event.target;
-    // console.log({ name: value });
     this.setState({ name: value });
   }
 

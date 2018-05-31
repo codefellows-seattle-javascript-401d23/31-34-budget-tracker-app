@@ -22,9 +22,7 @@ export default class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('i have submitted');
     const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
-    console.log(categoryId);
     this.props.onComplete({
       ...this.state,
       categoryId,
@@ -40,6 +38,7 @@ export default class ExpenseForm extends React.Component {
       <form
         className="expense-form"
         onSubmit={this.handleSubmit}>
+        <br/> <br/>
       <input
         type="text"
         name="name"

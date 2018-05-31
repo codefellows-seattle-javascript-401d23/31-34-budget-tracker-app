@@ -5,7 +5,6 @@ export default (state = emptyState, { type, payload }) => {
   let categoryExpenses;
   let updatedExpenses;
   let updatedState;
-
   switch (type) {
     case 'CATEGORY_CREATE':
       return { ...state, [payload.id]: [] };

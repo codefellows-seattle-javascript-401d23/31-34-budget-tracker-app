@@ -9,7 +9,6 @@ import Category from '../category/category';
 class Landing extends React.Component {
   render() {
     // - in the component, our state is linked AS PROPS
-    console.log(this.props, 'PROPS IN LANDING');
     const { categories, categoryCreate } = this.props;
     return (
       <div className='landing'>
@@ -17,7 +16,7 @@ class Landing extends React.Component {
         {/* Type sections.sections
         if you need to and check your Landing's props to see what "sections" looks like */}
         {
-          categories.categories.map((currentCategory, i) =>
+          categories.map((currentCategory, i) =>
             <Category category={currentCategory} key={i}/>)
         }
       </div>
@@ -26,13 +25,13 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  categories: PropTypes.object,
+  categories: PropTypes.array,
   categoryCreate: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
   return {
-    categories: state,
+    categories: state.categories,
   };
 };
 
