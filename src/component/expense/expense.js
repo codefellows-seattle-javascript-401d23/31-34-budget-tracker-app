@@ -26,9 +26,6 @@ Expense.propTypes = {
   expenseUpdate: PropTypes.func,
 };
 
-const mapStatetoProps = state => ({
-  expenses: state.expenses,
-}):
 
 const mapDispatchToProps = dispatch => ({
   expenseRemove: data => dispatch(expenseActions.removeAction(data)),

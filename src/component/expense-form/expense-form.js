@@ -8,6 +8,7 @@ export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.expense || defaultState
+    autoBind.call(this, ExpenseForm);
   }
 
   handleChange(event) {
@@ -16,7 +17,7 @@ export default class ExpenseForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const categoryId = this.props.category ? this.props.category.id : this.props.expense.category.id;
+    const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
     this.props.onComplete({
         ...this.state,
       categoryId,
@@ -27,7 +28,7 @@ export default class ExpenseForm extends React.Component {
   render() {
     const { expense } = this.props;
     const buttonText = expense ? 'Update Expense' : 'Create Expense';
-
+console.log(this.props,'______props_______');
     return (
         <form className='expense-form' onSubmit={this.handleSubmit}>
           <input
