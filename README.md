@@ -9,11 +9,11 @@
     * `timestamp` a date from when the category was created
     * `name` a string that is the name of the category
 * an expense contains:
-* a uuid
-    * categoryID an id that corresponds to an existing category
+    * a uuid
+    * categoryID - an id that corresponds to an existing category
     * timestamp a date from when the category was created
-    * name - a string name of the expense
-    * price a number for the expense
+    * name - a string
+    * price - a number
 
 #### redux
 ###### app reducer
