@@ -14,7 +14,7 @@ class Landing extends React.Component{
         <div className='landing'>
           <CategoryForm onComplete={ categoryCreate }/>
           {
-            categories.categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
+            categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
           }
         </div>
     );
@@ -22,7 +22,7 @@ class Landing extends React.Component{
 }
 
 Landing.propTypes = {
-  categories: PropTypes.object,
+  categories: PropTypes.array,
   categoryCreate: PropTypes.func,
 };
 
@@ -30,7 +30,7 @@ Landing.propTypes = {
 const mapStateToProps = (state) => {
   // the object we return WILL BECOME PROPS for landing
   return {
-    categories: state,
+    categories: state.categories,
   };
 };
 

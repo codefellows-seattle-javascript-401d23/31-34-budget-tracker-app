@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Landing from '../landing/landing';
+import Landing from '../dashboard/landing';
 
 class App extends React.Component {
   render() {
