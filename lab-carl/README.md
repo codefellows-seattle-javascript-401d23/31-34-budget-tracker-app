@@ -1,13 +1,59 @@
-# Lab 31 - Budget Tracker (Part 1)
+# Lab 32 - Budget Tracker (Part 2)
 
 ## Description
 
-This is a react application to keep track of categories of items and the budget/amount allotted to each. It's built utilizing redux to contain the application state. Categories can be added, updated and deleted. 
+This is a react application to keep track of categories of items, specific expenses associated with each category, and the budget/amount allotted to each. Categories include expenses and both categories and expenses can be created, updated, and deleted.
 
-## Architecture
+This app is built utilizing redux to contain the application state.
 
-JavaScript, React, Redux, Babel, webpack, uuid, sass. 
+## Tech / Framework
+
+- React
+- Redux
+- Babel
+- webpack
+- JavaScript
+- Node.js
+
+## Dependencies
+
+- babel-core
+- babel-eslint
+- babel-loader
+- babel-preset-env
+- babel-preset-react
+- babel-preset-stage-0
+- babel-register
+- css-loader
+- dotenv
+- enzyme
+- enzyme-adapter-react-16
+- eslint
+- eslint-config-airbnb-base
+- eslint-plugin-import
+- eslint-plugin-jest
+- html-webpack-plugin
+- jest
+- mini-css-extract-plugin
+- node-sass
+- prop-types
+- react
+- react-dom
+- react-redux
+- react-router-dom
+- react-test-renderer
+- redux
+- redux-devtools-extension
+- sass-loader
+- style-loader
+- uuid
+- webpack
+- webpack-cli
+- webpack-dev-server
+- webpack-merge
 
 ## Getting Started
 
-Fork and clone this repo, and in the command line enter ```npm i```. Enter ```npm run watch``` to open the application in the browser. 
+1. Fork and clone this repo.
+2. In the command line enter ```npm i``` to install required modules.
+3. Enter ```npm run watch``` to open the application in the browser. 
