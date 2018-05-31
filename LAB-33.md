@@ -9,7 +9,7 @@
   * it should log acctions and the state updates
   * it should wrap the updating of the store in a `try/catch` and gracefully log errors
  
-* Find to places to conditionaly render UI in your code based on view state.
+* Find to places to conditionally render UI in your code based on view state.
 
 ## Stretch Goals
 * Test your reducers and action creators
