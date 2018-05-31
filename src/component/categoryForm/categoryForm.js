@@ -4,7 +4,7 @@ import autoBind from '../../utils/';
 
 const defaultState = {
   title: '',
-  budget: 0,
+  budget: '',
 };
 
 class CategoryForm extends React.Component {

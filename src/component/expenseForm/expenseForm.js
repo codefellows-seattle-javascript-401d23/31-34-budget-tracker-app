@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from './../../utils/index';
 
-const emptyState = { content: '' };
+const emptyState = { 
+  content: '', 
+  price: '',
+};
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -12,7 +15,8 @@ export default class ExpenseForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ content: event.target.value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit(event) {
@@ -37,6 +41,13 @@ export default class ExpenseForm extends React.Component {
         name="content"
         placeholder="expense"
         value={this.state.content}
+        onChange={this.handleChange}
+        />
+        <input
+        type="number"
+        name="price"
+        placeholder="$"
+        value={this.state.price}
         onChange={this.handleChange}
         />
         <button type="submit"> {buttonText} </button>
