@@ -7,7 +7,7 @@ const defaultState = { content: '' };
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.expense || defaultState
+    this.state = this.props.expense || defaultState
   }
 
   handleChange(event) {

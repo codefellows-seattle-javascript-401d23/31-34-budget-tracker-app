@@ -11,7 +11,7 @@ class Expense extends React.Component {
         <div className='expense'>
           <p> { expense.content } </p>
           <button onClick={() => expenseRemove(expense)}>Remove</button>
-          <expenseForm
+          <ExpenseForm
             expense={expense}
             onComplete={expenseUpdate}
           />
@@ -25,6 +25,10 @@ Expense.propTypes = {
   expenseRemove: PropTypes.func,
   expenseUpdate: PropTypes.func,
 };
+
+const mapStatetoProps = state => ({
+  expenses: state.expenses,
+}):
 
 const mapDispatchToProps = dispatch => ({
   expenseRemove: data => dispatch(expenseActions.removeAction(data)),
