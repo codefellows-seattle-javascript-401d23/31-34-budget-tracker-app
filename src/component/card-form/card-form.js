@@ -34,6 +34,7 @@ export default class CardForm extends React.Component {
   }
 
   render() {
+    console.log('LKDJLKJSDLKFJLKSJDFLJK', this.state)
     const { card } = this.props;
     const buttonText = card ? 'Update Card' : 'Create Card';
 

@@ -21,12 +21,12 @@ class Section extends React.Component {
     const sectionCards = cards[section.id];
     return (
       <div className='section' key={key}>
-        <h1> {section.title } </h1>
+        <h1> { section.title } </h1>
         <button onClick={() => sectionRemove(section)}> Delete </button>
         <SectionForm section={section} onComplete={sectionUpdate}/>
         <CardForm section={section} onComplete={cardCreate} />
         <div className="card-list">
-          {sectionCards.map(card => <Card card={card} key={card.id} />) }
+          { sectionCards.map(card => <Card card={card} key={card.id} />) }
         </div>
       </div>
     );
@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    cardCreate: data => dispatch(cardActions.create(data)),
+    cardCreate: data => dispatch(cardActions.createAction(data)),
     sectionRemove: data => dispatch(sectionActions.remove(data)),
     sectionUpdate: data => dispatch(sectionActions.update(data)),
   };
