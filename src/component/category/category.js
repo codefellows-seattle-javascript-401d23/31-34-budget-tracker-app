@@ -42,8 +42,8 @@ Category.propTypes = {
   expenseCreate: PropTypes.func,
   category: PropTypes.object,
   key: PropTypes.number,
-  categoryRemove: data => PropTypes.func,
-  categoryUpdate: data => PropTypes.func,
+  categoryRemove: PropTypes.func,
+  categoryUpdate: PropTypes.func,
 };
 
 const mapStateToProps = state => ({

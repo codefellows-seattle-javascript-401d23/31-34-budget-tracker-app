@@ -27,12 +27,12 @@ class CategoryForm extends React.Component {
 
   // --------------------LIFECYCLE HOOKS-------------------
 
-  static getDerivedStateFromProps(nextProps) {
-    if (nextProps.category) {
-      return nextProps.category;
-    }
-    return defaultState;
-  }
+  //static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.category) {
+  //     return nextProps.category;
+  //   }
+  //   return defaultState;
+  // }
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
