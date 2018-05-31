@@ -9,12 +9,16 @@ import Category from '../category/category';
 class Landing extends React.Component {
   render() {
     // - in the component, our state is linked AS PROPS
-    const { category, categoryCreate } = this.props;
+    console.log(this.props, 'PROPS IN LANDING');
+    const { categories, categoryCreate } = this.props;
     return (
       <div className='landing'>
         <CategoryForm onComplete={categoryCreate}/>
+        {/* Type sections.sections
+        if you need to and check your Landing's props to see what "sections" looks like */}
         {
-          category.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
+          categories.categories.map((currentCategory, i) =>
+            <Category category={currentCategory} key={i}/>)
         }
       </div>
     );
@@ -22,13 +26,13 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  category: PropTypes.array,
+  categories: PropTypes.object,
   categoryCreate: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
   return {
-    category: state,
+    categories: state,
   };
 };
 

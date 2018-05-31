@@ -1,37 +1,42 @@
-401 JS --  Lab 31 Budget Tracker
+401 JS --  Lab 32 Budget Tracker
 ===
 
 
 ## Project Description
 
 * in this app a category contains the following properties
-  * `id` a uuid
-  * `timestamp` a date from when the category was created
-  * `name` a string that is the name of the category
+    * `id` a uuid
+    * `timestamp` a date from when the category was created
+    * `name` a string that is the name of the category
+* an expense contains:
+* a uuid
+    * categoryID an id that corresponds to an existing category
+    * timestamp a date from when the category was created
+    * name - a string name of the expense
+    * price a number for the expense
 
 #### redux
-###### reducer
-* creates a category reducer in your your reducer directory
-* this reducer supports the following interactions
-  * `CATEGORY_CREATE`
-  * `CATEGORY_UPDATE`
-  * `CATEGORY_DESTORY`
+###### app reducer
+* a reducer combines the categories and expenses reducer
 
-###### action creaters
-* creates an action creater for each interaction supported by your category reducer
+###### action creators have been created for each interaction
 
 #### Components
 creates the following components and structures them according to the following diagram.
 ```
 Provider
   App
-    Route / Landing Page
-      CategoryForm -- for creating categories
-       [CategoryItem]
-       CategoryForm  -- for updating categories
+    BrowserRouter
+      Route / Dashboard
+        CategoryForm -- for creating categories
+        [CategoryItem] -- list of Category items
+           CategoryForm  -- for updating categories
+           ExpenseForm -- for creating expenses
+           [ExpenseItem]  -- list of expense items
+              ExpenseForm -- for updating an expense
 ```
 
-###### App Component 
+###### App Component
 the App component sets up the single page application routes
 
 ###### Landing Component
@@ -52,5 +57,14 @@ the App component sets up the single page application routes
   * `onClick` the category should be removed from the application state
 * sdisplays a CategoryForm
   * `onComplete` the form updates the component in the application state
+
+###### ExpenseForm Component
+* an onComplete prop that invoked with the form state on submit
+*it supports create and update
+###### ExpenseItem Component
+*contains a button that will delete the expense from the appState onClick
+*displays the name and price of the component
+*displays an ExpenseForm that enables the user to update the expense in the app state
+
 
 

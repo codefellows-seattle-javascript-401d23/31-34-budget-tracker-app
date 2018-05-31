@@ -4,6 +4,7 @@ import autoBind from '../../utils';
 
 const defaultState = {
   name: '',
+  // budget: '',
 };
 
 class CategoryForm extends React.Component {
@@ -15,13 +16,23 @@ class CategoryForm extends React.Component {
 
   handleChange(event) {
     const { value } = event.target;
+    // console.log({ name: value });
     this.setState({ name: value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    // console.log(this.state);
+    this.setState(defaultState);
   }
+
+  // static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.category) {
+  //     return nextProps.category;
+  //   }
+  //   return defaultState;
+  // }
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
@@ -34,7 +45,6 @@ class CategoryForm extends React.Component {
           type='text'
           name='name'
           placeholder={'Name'}
-          value={this.state.name}
           onChange={this.handleChange}
         />
         <button type='submit'>{buttonText} Category</button>
@@ -44,7 +54,7 @@ class CategoryForm extends React.Component {
 }
 
 CategoryForm.propTypes = {
-  _onComplete: PropTypes.func,
+  onComplete: PropTypes.func,
   category: PropTypes.object,
 };
 
