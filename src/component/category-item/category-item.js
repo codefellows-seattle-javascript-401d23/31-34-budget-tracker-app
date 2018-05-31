@@ -27,13 +27,13 @@ class CategoryItem extends React.Component {
       budgetRemaining = category.budget - budgetUsed;
     }
     const showCategoryModal = () => categoryUpdate({ ...category, editing: true });
-    const hideCategoryModal = () => categoryUpdate({ ...category, editing: false });
+    const hideCategoryModal = () => categoryUpdate({ ...category, editing: false, addExp: false });
     const showExpenseForm = () => categoryUpdate({ ...category, addExp: true });
     const hideExpenseForm = () => categoryUpdate({ ...category, addExp: false });
     return (
       <div className='category-item'>
         <button onClick={() => categoryDestroy(category)}> delete </button>
-        <button onClick={showCategoryModal}> update </button>
+        <button onClick={showCategoryModal}> edit </button>
         {
           category.addExp ? <button onClick={hideExpenseForm}> done </button> :
             <button onClick={showExpenseForm}> add expenses </button>
