@@ -4,7 +4,6 @@ import autoBind from '../../utils';
 
 const defaultState = {
   name: '',
-  budget: '',
 };
 
 class CategoryForm extends React.Component {
@@ -15,7 +14,8 @@ class CategoryForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    const { value } = event.target;
+    this.setState({ title: value });
   }
 
   handleSubmit(event) {
@@ -24,7 +24,14 @@ class CategoryForm extends React.Component {
     this.setState(defaultState);
   }
 
-  // Lifecycle hooks...
+  // Lifecycle hooks... =  listens to props and state changes...
+  static getDerivedStateFromProps(nextProps) {
+    if (nextProps.category) {
+      return nextProps.category;
+    }
+    return defaultState;
+  }
+
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
@@ -38,13 +45,6 @@ class CategoryForm extends React.Component {
             type='text'
             placeholder='Category Name'
             value={this.state.name}
-            onChange={this.handleChange}
-          />
-          <input
-            name='budget'
-            type='number'
-            placeholder='budget'
-            value={this.state.budget}
             onChange={this.handleChange}
           />
           <button type='submit'>{buttonText} Category</button>

@@ -4,36 +4,56 @@ import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category';
 
+import ExpenseForm from './../expense-form/expense-form';
+import Expense from '../expense/expense';
+import * as expenseActions from '../../action/expense';
+
 class Category extends React.Component {
   render() {
     const {
+      expenses,
+      expenseCreate,
       category,
       key,
       categoryDestroy,
       categoryUpdate,
     } = this.props;
+
+    const categoryExpenses = expenses[category.id];
+
     return (
       <div className='category' key={key}>
       <h1> { category.name }</h1>
         <button onClick={() => categoryDestroy(category)}> Delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
+        <ExpenseForm category={category} onComplete={expenseCreate} />
+        <div className="expense-list">
+          { categoryExpenses.map(expense => <Expense expense={expense} key={expense.id}/>) }
+        </div>
       </div>
     );
   }
 }
 
 Category.propTypes = {
+  expenses: PropTypes.object,
+  expenseCreate: PropTypes.func,
   category: PropTypes.object,
   key: PropTypes.number,
   categoryDestroy: PropTypes.func,
   categoryUpdate: PropTypes.func,
 };
 
+const mapStateToProps = state => ({
+  expenses: state.expenses,
+});
+
 const mapDispatchToProps = (dispatch) => {
   return {
+    expenseCreate: data => dispatch(expenseActions.createAction(data)),
     categoryDestroy: data => dispatch(categoryActions.destroy(data)),
     categoryUpdate: data => dispatch(categoryActions.update(data)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Category);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

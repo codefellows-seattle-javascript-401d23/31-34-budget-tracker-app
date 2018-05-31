@@ -3,13 +3,14 @@ import { createStore, applyMiddleware } from 'redux';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
 import App from './component/app/app';
-import Dashboard from './component/dashboard/dashboard';
-import categoryReducer from './reducer/category';
+import reducer from './reducer/main';
+
 import './styles/main.scss';
 
 const middleware = {};
-const store = createStore(categoryReducer, composeWithDevTools(applyMiddleware(...middleware)));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 const appContainer = document.createElement('div');
 document.body.appendChild(appContainer);
