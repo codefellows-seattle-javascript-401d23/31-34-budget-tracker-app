@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from './../../utils/autobind';
 
-const emptyState = { name: '' };
+const emptyState = {
+  name: '',
+  price: '',
+};
 
 class ExpenseForm extends React.Component {
   constructor(props) {
