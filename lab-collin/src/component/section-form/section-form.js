@@ -21,6 +21,7 @@ class SectionForm extends React.Component {
       [name]: value,
     });
   }
+  
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
