@@ -10,7 +10,7 @@
   * it should wrap the updating of the store in a `try/catch` and gracefully log errors
  
 * Find to places to conditionally render UI in your code based on view state.
+* Test your compontens using Enzyme and Jest
 
-## Stretch Goals
-* Test your reducers and action creators
+## Strecth Goal
 * Implement (and complete) the session storage middleware.
