@@ -9,14 +9,9 @@ import reducer from './reducer/main';
 
 import './styles/main.scss';
 
-//------------------------------------------------------------
-// Setting up the Store
-//------------------------------------------------------------
 const middleware = {};
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
-//------------------------------------------------------------
-// Redering
-//------------------------------------------------------------
+
 const appContainer = document.createElement('div');
 document.body.appendChild(appContainer);
 

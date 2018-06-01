@@ -46,7 +46,9 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "redux-mock-store": "^1.5.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
