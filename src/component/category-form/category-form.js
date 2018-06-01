@@ -15,7 +15,6 @@ class CategoryForm extends React.Component {
     super(props);
     this.state = this.props.category || defaultState;
     autoBind.call(this, CategoryForm);
-
   }
   // ----------------MEMBER FUNCTIONS------------------
   handleChange(event) {
@@ -51,11 +50,15 @@ class CategoryForm extends React.Component {
             placeholder='Category'
             value={this.state.title}
             onChange={this.handleChange}
-            className={ classToggler({ updateCategory: true,
-              updateCategoryShow: this.props.updateCategory }) }
+            className={ classToggler({
+              updateCategory: true,
+              updateCategoryShow: this.props.updateCategory,
+            }) }
             />
-          <button type='submit' className={ classToggler({ updateCategory: true,
-            updateCategoryShow: this.props.updateCategory }) }>{buttonText} Category</button>
+          <button type='submit' className={ classToggler({
+            updateCategory: true,
+            updateCategoryShow: this.props.updateCategory,
+          }) }>{buttonText} Category</button>
         </form>
     );
   }

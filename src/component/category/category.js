@@ -6,17 +6,17 @@ import * as categoryActions from '../../action/category';
 import ExpenseForm from './../expense-form/expense-form';
 import Expense from '../expense/expense';
 import * as expenseActions from '../../action/expense';
-import autoBind from "../../utils";
+import autoBind from '../../utils';
 
 class Category extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = { show: false };
     autoBind.call(this, Category);
   }
 
   handleShowButton = () => {
-    this.state.show ? this.setState({show: false}) : this.setState({show: true});
+    this.state.show ? this.setState({ show: false }) : this.setState({ show: true }); //eslint-disable-line
   };
 
   render() {
@@ -37,11 +37,9 @@ class Category extends React.Component {
             { category.title }
           </h1>
           <button onClick={() => categoryRemove(category) }> Delete </button>
-          <br/>
-          <br/>
           <CategoryForm category={category} onComplete={categoryUpdate}
             updateCategory={this.state.show}/>
-          <button onClick={ this.handleShowButton }> edit </button>
+          <button onClick={ this.handleShowButton }> Category Edit </button>
           <ExpenseForm category={category} expense={expenses} onComplete={expenseCreate} />
           <div className='expense-list'>
             { expenses[category.id].map(expense => <Expense expense={expense} key={expense.id} />) }

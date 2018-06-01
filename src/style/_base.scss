@@ -6,12 +6,12 @@ body {
   color: $font-color;
 }
 
-a {
-  color: $font-color;
+header {
+  text-align: center;
 }
 
-a:hover {
-  text-decoration: none;
+#category-form {
+  background: $category-color;
 }
 
 .error {
