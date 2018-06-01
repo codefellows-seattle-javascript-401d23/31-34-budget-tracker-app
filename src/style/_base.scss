@@ -1,0 +1,36 @@
+@import 'vars';
+
+body {
+  background: $background-color;
+  font-family: sans-serif;
+  color: $font-color;
+}
+
+header {
+  text-align: center;
+  background: $header-bkg-clr;
+}
+form {
+  margin-left: 25%;
+}
+
+#category-form {
+  background: $category-color;
+}
+#category {
+  margin-left: 15%;
+}
+
+#expense {
+  background: $expense-color;
+  margin-left: 20%;
+}
+
+#expense-form {
+  background: $expense-form;
+  margin-left: 5%;
+}
+
+.error {
+  color: $error;
+}

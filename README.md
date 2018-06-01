@@ -1,83 +1,59 @@
-401 JS --  Lab 31 Budget Tracker
-===
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a pull request from your working branch to the master branch of your own forked repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  
-## Requirements  
-#### Configuration  
-Your lab directory must include  
-* **README.md** -- with a documention about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.common.js** -- with webpack config
-* **webpack.dev.js** -- with webpack config
-* **src/** -- containing the front end code
-* **src/main.js** -- containing the entire app
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+# LAB 33  UA Budget Category Tracker
+[![Build Status](https://travis-ci.org/Joshua-Fredrickson/31-34-budget-tracker-app.svg?branch=master)](https://travis-ci.org/Joshua-Fredrickson/31-34-budget-tracker-app)
 
-## Feature Tasks 
-#### Category 
-* in this app a category should contain at least the following properties
-  * `id` a uuid
-  * `timestamp` a date from when the category was created
-  * `name` a string that is the name of the category
-  * `budget` a number that is the total amount of $ in the category 
-  * feel free to add more to your categories if you want
 
-#### redux
-###### reducer
-* create a category reducer in your your reducer directory
-* this reducer should support the following interactions 
-  * `CATEGORY_CREATE`
-  * `CATEGORY_UPDATE`
-  * `CATEGORY_DESTORY`
+**Author**: Joshua Fredrickson
 
-###### action creaters
-* you should create an action creater for each interaction supported by your category reducer
+**Version**: 1.3.0 
 
-#### Components
-Create the following components and structure them according to the following diagram.  
-```
-Provider
-  App 
-    BrowserRouter
-      Route / Dashboard
-        CategoryForm -- for creating categories
-        [CategoryItem]
-           CategoryForm  -- for updating categories
-```
+# Overview
 
-###### App Component 
-The App component should setup the single page applicaion routes
+Lab 33 is a handy dandy budget tracker that tracks categories and lists expenses.
 
-###### Dashboard Component 
-* should be displayed on the `/` route
-* should use react-redux's `connect` to map state and dispatchable methods to props
-* should display a `CategoryForm` for adding categories to the app state
-* should display a `CategoryItem` for each category in the app state
 
-###### CategoryForm Component
-* should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForms State when the form is submitted
-* should support an optional `category` prop that will initialize the state of the form
+# Getting Started
 
-###### CategoryItem Component
-* should display the category's name and budget
-* should receive a category prop from Dashboard
-* should display a delete button
-  * `onClick` the category should be removed from the application state
-* should display a CategoryForm  
-  * `onComplete` the form should update the component in the application state
+To use the Lab 33 application, [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) 
+(Node Package manager) will need to be locally installed.  Once Node.js and npm have been 
+installed, install the Lab 33 files.  
+ Prior to starting the Lab 33 application, from the command line while you are in the Lab 33 file 
+ folder, enter the command `npm i`.  This will download all needed dependencies for the 
+ application to run locally.  To locally run this application, the user will have to run `npm 
+ run watch` the terminal command line.  Then the application will run on your local browser at an
+ address of localhost:8080.   
 
-##  Documentation  
-Write a description of the project in your README.md
+
+# Architecture
+
+This application was deployed with the following technologies.
+Node.js, npm, React, Redux, babel, jest, eslint, JavaScript
+
+
+## Change Log
+05-29-2018 01:47pm initial scaffolding and lecture code
+05-29-2018 01:53PM additional scaffolding
+05-29-2018 02:15 updated section-form button
+05-29-2018 04:58PM Finished Lecture code
+05-29-2018 06:58PM more lecture code
+05-29-2018 07:21PM lecture code not throwing errors
+05-29-2018 09:58PM fixed empty state
+05-29-2018 10:11PM my lecture code is still having an error within the browser
+05-30-2018 12:41pm Lecture Code is fixed
+05-30-2018 01:21PM I have functionality for the Lab
+05-31-2018 07:31AM git statusBUG with the Category Form Field not add…
+05-31-2018 09:43AM updated commented out static getDerived..
+05-31-2018 02:50PM Expense part 1 is working need to add $ amount field
+05-31-2018 05:48PM lab is working
+05-31-2018 08:03PM Refactoring Lecture Code
+05-31-2018 08:09PM Passing Tests
+05-31-2018 08:54PM Passing 2 Tests
+05-31-2018 09:08PM Cleaning up the UI
+05-31-2018 10:18PM Category Update Hides and is replaced by an edit button
+05-31-2018 11:41PM FIXED: Category Update Hides and is replaced by an edit button
+
+
+
+## Credits and Colaborations
+Special thanks to all of the Code Fellows staff, TA's, Melanie Downing, Brian Bixby and fellow 
+401-d23 students.
