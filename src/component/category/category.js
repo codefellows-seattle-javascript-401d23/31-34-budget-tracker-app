@@ -20,7 +20,7 @@ class Category extends React.Component {
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
-    // console.log(category, 'category budget');
+    console.log(category, 'category budget');
 
     return (
       <div className='category' key={key}>

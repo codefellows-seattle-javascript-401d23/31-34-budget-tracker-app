@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate } = this.props;
 
-      // console.log("categories", categories);
+    // console.log(categories, 'categories');
 
     return (
       <div className='dashboard'>
