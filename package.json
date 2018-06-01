@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "lint": "eslint .",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "test": "jest"
   },
@@ -38,6 +39,7 @@
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
+    "redux-mock-store": "^1.5.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "uuid": "^3.2.1",

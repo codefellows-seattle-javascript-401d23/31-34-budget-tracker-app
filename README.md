@@ -1,20 +1,23 @@
-# LAB 31  Budget Category Tracker
+
+# LAB 33  Budget Category Tracker
+
 
 **Author**: Joshua Fredrickson
 
-**Version**: 1.0.0 
+**Version**: 1.3.0 
 
 # Overview
 
-Lab 31 is a Budget tracker that keeps a list of Categories.
+
+Lab 33 is a Budget tracker that tracks categories and lists expenses.
 
 
 # Getting Started
 
-To use the Lab 31 application, [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) 
+To use the Lab 33 application, [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) 
 (Node Package manager) will need to be locally installed.  Once Node.js and npm have been 
-installed, install the Lab 31 files.  
- Prior to starting the Lab 31 application, from the command line while you are in the Lab 31 file 
+installed, install the Lab 33 files.  
+ Prior to starting the Lab 33 application, from the command line while you are in the Lab 33 file 
  folder, enter the command `npm i`.  This will download all needed dependencies for the 
  application to run.   
 
@@ -37,5 +40,6 @@ Node.js, npm, React, Redux, babel, jest, eslint, JavaScript
 05-30-2018 12:41pm Lecture Code is fixed
 05-30-2018 01:21PM I have functionality for the Lab
 
+
 ## Credits and Colaborations
-Special thanks to all of the Code Fellows staff and fellow 401-d23 students.
+Special thanks to all of the Code Fellows staff, TA's, Brian Bixby and fellow 401-d23 students.

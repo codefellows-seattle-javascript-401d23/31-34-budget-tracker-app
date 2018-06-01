@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/index';
+import { classToggler } from '../../utils/helper';
 
 // this is in the UI STATE!!!!
 const defaultState = {
-  title:'',
+  title: '',
+  budget: 0,
+  updateCategory: false,
 };
 
 class CategoryForm extends React.Component {
@@ -12,6 +15,7 @@ class CategoryForm extends React.Component {
     super(props);
     this.state = this.props.category || defaultState;
     autoBind.call(this, CategoryForm);
+
   }
   // ----------------MEMBER FUNCTIONS------------------
   handleChange(event) {
@@ -22,13 +26,21 @@ class CategoryForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(defaultState);
   }
 
   // --------------------LIFECYCLE HOOKS-------------------
 
+  // static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.category) {
+  //     return nextProps.category;
+  //   }
+  //   return defaultState;
+  // }
+
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
-    return(
+    return (
         <form
         onSubmit={this.handleSubmit}
         className='category-form'>
@@ -39,8 +51,12 @@ class CategoryForm extends React.Component {
             placeholder='Category'
             value={this.state.title}
             onChange={this.handleChange}
+            className={ classToggler({ updateCategory: true,
+              updateCategoryShow: this.props.updateCategory }) }
             />
-          <button type='submit'>{buttonText} Category</button>
+          <button type='submit' className={ classToggler({
+            updateCategory: true,
+            updateCategoryShow: this.props.updateCategory }) }> {buttonText} Category</button>
         </form>
     );
   }
