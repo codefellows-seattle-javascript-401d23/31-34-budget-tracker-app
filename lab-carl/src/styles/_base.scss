@@ -46,7 +46,7 @@ h1, h2, ul {
   color: $error;
 }
 
-.error  input {
+.error input {
   border: 3px solid red;
 }
 
@@ -64,4 +64,19 @@ a:hover {
 
 .item-display * {
   display: inline-block;
+}
+
+input {
+  height: 40px;
+  padding-left: 10px;
+  width: 175px;
+  border-radius: 2px;
+}
+
+button {
+  height: 46px;
+  width: 175px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: rgb(176, 252, 252);
 }

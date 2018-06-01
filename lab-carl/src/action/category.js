@@ -5,6 +5,7 @@ const create = ({ name, budget }) => ({
   payload: {
     name,
     budget,
+    editing: false,
     id: uuid(),
     createdOn: new Date(), 
   },

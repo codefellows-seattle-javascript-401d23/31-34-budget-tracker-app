@@ -9,7 +9,7 @@ class Expense extends React.Component {
     const { expense, expenseDestroy, expenseUpdate } = this.props;
     return (
       <div className='expense'>
-        <h4> {expense.name}:  ${expense.price} </h4>
+        <h4> Expense: {expense.name}  |  ${expense.price} </h4>
         <div className='item-display'>
           <ExpenseForm 
             expense={expense}

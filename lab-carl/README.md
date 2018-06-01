@@ -1,10 +1,10 @@
-# Lab 32 - Budget Tracker (Part 2)
+# Lab 33 - Budget Tracker (Part 3)
 
 ## Description
 
 This is a react application to keep track of categories of items, specific expenses associated with each category, and the budget/amount allotted to each. Categories include expenses and both categories and expenses can be created, updated, and deleted.
 
-This app is built utilizing redux to contain the application state.
+This app is built utilizing redux to contain the application state. Redux reporter middleware is used to log the state and actions. Redux session middleware is used to add the state to local storage. 
 
 ## Tech / Framework
 
@@ -57,3 +57,4 @@ This app is built utilizing redux to contain the application state.
 1. Fork and clone this repo.
 2. In the command line enter ```npm i``` to install required modules.
 3. Enter ```npm run watch``` to open the application in the browser. 
+4. Enter ```npm run test``` to verify the dashboard component is mounting and has access to the expected state.

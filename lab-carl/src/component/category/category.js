@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category';
-
+import Modal from '../modal/modal';
 import ExpenseForm from '../expense-form/expense-form';
 import Expense from '../expense/expense';
 import * as expenseActions from '../../action/expense';
@@ -20,17 +20,37 @@ class Category extends React.Component {
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
+
+    const showModal = () => categoryUpdate({...category, editing: true});
+
+    const hideModal = () => categoryUpdate({...category, editing: false});
+
+    const updateAndClose = (updatedCategory) => {
+      categoryUpdate({...updatedCategory, editing: false });
+    }
+
+
     return (
       <div className='category' key={key}>
         <h3> Category: <strong>{category.name}</strong> | Budget: <strong>${category.budget}</strong></h3>
-        <div className='item-display'>
-        <CategoryForm category={category} onComplete={categoryUpdate}/>
-        <button className='delete-button' onClick={() => categoryDestroy(category)}> Delete </button>
-        </div>
+        {/* <div className='item-display'> */}
+          <button onClick={showModal}>Update <strong>{category.name}</strong></button>
+          <Modal show={category.editing} handleClose={hideModal}>
+            <CategoryForm category={category} onComplete={categoryUpdate}/>
+            <button className='delete-button' onClick={() => categoryDestroy(category)}> Delete </button>
+          </Modal>
+        {/* </div> */}
         <hr/>
         <ExpenseForm category={category} onComplete={expenseCreate} />
         <div className='expense-list'>
-          { categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />) }
+          
+          { 
+            categoryExpenses.length > 0
+            ? 
+            categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />) 
+            :
+            <p>Expenses will show here for the above category</p>
+          }
         </div>
       </div>
     );

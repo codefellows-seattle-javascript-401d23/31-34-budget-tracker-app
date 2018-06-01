@@ -6,10 +6,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './component/app/app';
 import categoryReducer from './reducer/main';
+import reporter from './lib/redux-reporter';
+import session from './lib/redux-session';
+
 import './styles/main.scss';
 
 const middlware = {};
-const store = createStore(categoryReducer, composeWithDevTools(applyMiddleware(...middlware)));
+const store = createStore(categoryReducer, composeWithDevTools(applyMiddleware(reporter, session)));
 
 const appContainer = document.createElement('div');
 document.body.appendChild(appContainer);
