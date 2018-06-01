@@ -9,7 +9,7 @@ configureEnzyme({ adapter: new Adapter() });
 
 describe('#Dashboard', () => {
   const initialState = {
-    category: [{
+    categories: [{
       title: 'testyCategory',
       id: '11111111',
       createdOn: new Date(),
@@ -19,7 +19,7 @@ describe('#Dashboard', () => {
       id: '22222222',
       createdOn: new Date(),
     }],
-    expense: {
+    expenses: {
       11111111: [],
       22222222: [],
     },
