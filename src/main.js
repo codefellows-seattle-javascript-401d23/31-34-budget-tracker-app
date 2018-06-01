@@ -8,13 +8,13 @@ import App from './component/app/app';
 // import categoryReducer from './reducer/category';
 import reducer from './reducer/main';
 import './styles/main.scss';
+import session from './lib/redux-session';
 
 // -----------------------------------------------
 // Setting up the store
 // _______________________________________________
 
-const middleware = {};
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(session)));
 
 // ----------------------------------------------
 // Rendering
