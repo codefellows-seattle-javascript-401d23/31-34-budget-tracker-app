@@ -20,18 +20,34 @@ describe('#Dashboard', () => {
       createdOn: new Date(),
     }],
     expenses: {
-      11111111: [],
-      22222222: [],
+      11111111: [{
+        content: 'expenseTest',
+        cost: '99.99',
+        categoryId: 11111111,
+        id: 321,
+      }],
+      22222222: [{
+        content: 'expenseTest',
+        cost: '99.99',
+        categoryId: 22222222,
+        id: 212,
+      }],
     },
   };
 
-  test('', () => {
+  test('Categories', () => {
     const mockStore = configureStore([]);
     const mountedDashboard = mount(<Provider store={mockStore(initialState)}>
       <Dashboard/></Provider>);
-
-    console.log(mountedDashboard.html());
     expect(mountedDashboard.find('CategoryForm')).toBeTruthy();
     expect(mountedDashboard.find('Category').length).toEqual(2);
+  });
+
+  test('Expenses', () => {
+    const mockStore = configureStore([]);
+    const mountedDashboard = mount(<Provider store={mockStore(initialState)}>
+      <Dashboard/></Provider>);
+    expect(mountedDashboard.find('ExpenseForm')).toBeTruthy();
+    expect(mountedDashboard.find('Expense').length).toEqual(2);
   });
 });
