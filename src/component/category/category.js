@@ -36,10 +36,10 @@ class Category extends React.Component {
           <h1>
             { category.title }
           </h1>
+          <button onClick={ this.handleShowButton }> Category Edit </button>
           <button onClick={() => categoryRemove(category) }> Delete </button>
           <CategoryForm category={category} onComplete={categoryUpdate}
             updateCategory={this.state.show}/>
-          <button onClick={ this.handleShowButton }> Category Edit </button>
           <ExpenseForm category={category} expense={expenses} onComplete={expenseCreate} />
           <div className='expense-list'>
             { expenses[category.id].map(expense => <Expense expense={expense} key={expense.id} />) }
