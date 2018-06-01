@@ -1,0 +1,26 @@
+@import 'vars';
+
+html, body {
+  background: $background-color;
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+  color: $font-color;
+  margin-top: 10px;
+}
+
+a {
+  color: $font-color;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.category {
+  background: $category-background;
+  width: 50%;
+  border: solid 3px black;
+  margin: 5px auto;
+  padding: 5px;
+}
