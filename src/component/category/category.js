@@ -20,15 +20,19 @@ class Category extends React.Component {
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
+    // console.log(category, 'category budget');
 
     return (
       <div className='category' key={key}>
-      <h1> { category.name }</h1>
-        <button onClick={() => categoryDestroy(category)}> Delete </button>
+        <h1>{ category.name } </h1>
+        <p>You just added the following category: { category.name }</p>
+        <p>You just added the following budget type: { category.budget }</p>
+        <button onClick={() => categoryDestroy(category)}> Delete {category.name } </button>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
+        <p>Add an expense to your category below:</p>
         <ExpenseForm category={category} onComplete={expenseCreate} />
         <div className="expense-list">
-          { categoryExpenses.map(expense => <Expense expense={expense} key={expense.id}/>) }
+          { categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />) }
         </div>
       </div>
     );
@@ -45,7 +49,7 @@ Category.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  expenses: state.expenses,
+  expenses: state.expense,
 });
 
 const mapDispatchToProps = (dispatch) => {

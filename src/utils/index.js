@@ -1,4 +1,3 @@
-// this will help us autobind our class methods
 
 export default function autoBind(classComponent) {
   // this returns an array of methods off class component's prototype

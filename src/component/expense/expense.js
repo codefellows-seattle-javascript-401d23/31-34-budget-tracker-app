@@ -7,10 +7,11 @@ import * as expenseActions from '../../action/expense';
 class Expense extends React.Component {
   render() {
     const { expense, expenseRemove, expenseUpdate } = this.props;
-    console.log(this.props, 'Expense Props')
+    // console.log(this.props, 'Expense Props')
     return (
       <div className="expense">
         <p> { expense.name } </p>
+        <p> { expense.price } </p>
         <button onClick={() => expenseRemove(expense)}>Delete</button>
         <ExpenseForm
           expense={expense}

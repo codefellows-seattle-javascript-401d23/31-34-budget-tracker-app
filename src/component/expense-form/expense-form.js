@@ -12,15 +12,18 @@ export default class ExpenseForm extends React.Component {
   }
 
   handleChange(event) {
-    // this.setState({ name: event.target.value });
-    this.setState({ [event.target.name]: event.target.value });
+    // const { name, value } = event.target;
+    // this.setState({ [name]: value });
+    this.setState({ [event.target.name]: event.target.value }, () => {
+      // console.log(this.state);
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const categoryId = // TODO: category is missing in props validation
-      this.props.category ? this.props.category.id : this.props.expense.categoryId;
-
+    const categoryId =
+      this.props.category ? this.props.category.id : this.state.categoryId;
+    // console.log(this.props.expense, "here")
     this.props.onComplete({
       ...this.state,
       categoryId,
@@ -31,7 +34,7 @@ export default class ExpenseForm extends React.Component {
   render() {
     const { expense } = this.props;
     const buttonText = expense ? 'Update Expense' : 'Create Expense';
-
+    // console.log(expense, "here")
     return (
       <form
         className="expense-form"
@@ -59,6 +62,6 @@ export default class ExpenseForm extends React.Component {
 
 ExpenseForm.propTypes = {
   onComplete: PropTypes.func,
-  section: PropTypes.object,
+  category: PropTypes.object,
   expense: PropTypes.object,
 };
