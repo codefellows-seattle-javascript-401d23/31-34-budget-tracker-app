@@ -1,0 +1,126 @@
+$background-color: #EEEEEE;
+$font-color: #FFFFFF;
+$error: #ff0000;
+$rounded: 3px;
+$light-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
+
+html, body {
+  background: $background-color;
+  text-align: center;
+  display: block;
+  font-size: 1.175em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+h1 {
+  margin-top: 2.5em;
+  color: #555555;
+}
+
+p, h2, ul, pre {
+  color: $font-color;
+}
+
+li {
+  list-style: none;
+}
+
+button:hover {
+  border: 0.1vw solid red;
+}
+
+.error {
+  color: $error;
+}
+
+.categoryForm :nth-child(2) {
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  clear: both;
+}
+
+.budgetFormHeader {
+  padding: 1vw;
+  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+  border-radius: 3px;
+  margin: 3vw auto;
+  min-width: 600px;
+  max-width: 70%;
+}
+
+.categoryItem {
+  max-width: 600px;
+  background-color: #FFFFFF;
+  height: 20em;
+  border-radius: $rounded;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: $light-shadow;
+  min-width: 600px;
+  overflow: scroll;
+}
+
+.categoryItemDelete {
+  position: absolute;
+  float: right;
+  top: 0;
+  right: 0;
+}
+
+.categoryItemDisplay {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  box-shadow: $light-shadow;
+  max-width: 100%;
+  border-radius: $rounded;
+}
+
+.categoryItemDisplay h2 {
+  display: inline;
+  text-align: left;
+  margin-right: 4em;  
+  // float: left;
+}
+
+.categoryItemDisplay p {
+  display: inline;
+  text-align: right;
+  // clear: left;
+  // text-align: right;
+}
+
+.categoryBanner {
+  display: inline-block;
+  width: 100%;
+  padding: 1.5em;
+}
+
+.expense {
+  margin-top: 1em;
+}
+
+.expenseDelete {
+  position: absolute;
+  float: right;
+  top: 0;
+  right: 0;
+}
+
+.expenseDisplay {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  box-shadow: $light-shadow;
+  max-width: 100%;
+  border-radius: $rounded;
+}
+
+.expenseBanner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: #555555;
+}
