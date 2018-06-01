@@ -1,20 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as sectionActions from '../../action/section';
-import SectionForm from '../section-form/section-form';
-import Section from '../section/section';
+import * as categoryActions from '../../action/category';
+import CategoryForm from '../category-form/category-form';
+import Category from '../category/category';
 
 //-------------------------------------------------------------------------------------------
 class Landing extends React.Component {
   render() {
     // Zachary - in the component, our state is linked AS PROPS
-    const { sections, sectionCreate } = this.props;
+    const { categories, categoryCreate } = this.props;
     return (
       <div className='landing'>
-        <SectionForm onComplete={sectionCreate}/>
+        <CategoryForm onComplete={categoryCreate} />
         {
-          sections.sections.map((currentSection, i) => <Section section={currentSection} key={i}/>)
+          categories.map((currentCategory, i) => <Category category={currentCategory} key={i} />)
         }
       </div>
     );
@@ -22,20 +22,20 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  sections: PropTypes.object,
-  sectionCreate: PropTypes.func,
+  categories: PropTypes.array,
+  categoryCreate: PropTypes.func,
 };
 //-------------------------------------------------------------------------------------------
 const mapStateToProps = (state) => {
   // Zachary - the object we return WILL BECOME PROPS for landing 
   return {
-    sections: state,
+    categories: state.categories,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    sectionCreate: data => dispatch(sectionActions.create(data)),
+    categoryCreate: data => dispatch(categoryActions.create(data)),
   };
 };
 

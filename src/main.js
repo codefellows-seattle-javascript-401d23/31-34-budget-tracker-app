@@ -4,9 +4,9 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import App from './component/app/app';
-import reducer from './reducer/main';
-import './styles/main.scss';
+import App from './src/component/app/app';
+import reducer from './src/reducer/main';
+import './src/styles/main.scss';
 
 //-------------------------------------------------------------------------------------------
 // Setting up the Store

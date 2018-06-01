@@ -4,7 +4,6 @@ import autoBind from './../../utils/index';
 
 const emptyState = { content: '' };
 
-
 export default class CardForm extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ export default class CardForm extends React.Component {
   }
 
   render() {
-    console.log('LKDJLKJSDLKFJLKSJDFLJK', this.state)
+    console.log('LKDJLKJSDLKFJLKSJDFLJK', this.state);
     const { card } = this.props;
     const buttonText = card ? 'Update Card' : 'Create Card';
 
