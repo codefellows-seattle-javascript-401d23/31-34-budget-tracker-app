@@ -20,7 +20,7 @@ class CategoryItem extends React.Component {
     const categoryExpense = expenses[category.id];
     return (
       <div className = 'category' key = { category.id }>
-        <h1> { category.name } </h1>
+        <h1> { category.name }: ${ category.budget } </h1>
         <button onClick = {() => categoryDestroy(category)}> Destroy </button>
         <CategoryForm category = { category } onComplete = { categoryUpdate }/>
         <ExpenseForm category = { category } onComplete = { expenseCreate } />
