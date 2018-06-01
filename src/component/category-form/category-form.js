@@ -54,9 +54,8 @@ class CategoryForm extends React.Component {
             className={ classToggler({ updateCategory: true,
               updateCategoryShow: this.props.updateCategory }) }
             />
-          <button type='submit' className={ classToggler({
-            updateCategory: true,
-            updateCategoryShow: this.props.updateCategory }) }> {buttonText} Category</button>
+          <button type='submit' className={ classToggler({ updateCategory: true,
+            updateCategoryShow: this.props.updateCategory }) }>{buttonText} Category</button>
         </form>
     );
   }
