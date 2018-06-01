@@ -6,11 +6,11 @@ import CategoryForm from '../category-form/category-form';
 import Category from '../category/category';
 
 
-class Landing extends React.Component{
+class Landing extends React.Component {
   render() {
     // Josh in the component, our state is linked AS PROPS
     const { categories, categoryCreate } = this.props;
-    return(
+    return (
         <div className='landing'>
           <CategoryForm onComplete={ categoryCreate }/>
           {

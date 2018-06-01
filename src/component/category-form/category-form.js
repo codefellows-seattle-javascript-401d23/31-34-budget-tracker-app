@@ -4,7 +4,7 @@ import autoBind from '../../utils/index';
 
 // this is in the UI STATE!!!!
 const defaultState = {
-  title:'',
+  title: '',
   budget: 0,
 };
 
@@ -28,7 +28,7 @@ class CategoryForm extends React.Component {
 
   // --------------------LIFECYCLE HOOKS-------------------
 
-  //static getDerivedStateFromProps(nextProps) {
+  // static getDerivedStateFromProps(nextProps) {
   //   if (nextProps.category) {
   //     return nextProps.category;
   //   }
@@ -37,7 +37,7 @@ class CategoryForm extends React.Component {
 
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
-    return(
+    return (
         <form
         onSubmit={this.handleSubmit}
         className='category-form'>

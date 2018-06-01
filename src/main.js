@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './component/app/app';
 import reducer from './reducer/main';
-import'./style/main.scss';
+import './style/main.scss';
 
 // setting up store -------------------------------------------------------------------
 const middleware = {};

@@ -1,4 +1,5 @@
 'use strict';
+
 import uuid from 'uuid/v4';
 
 // Josh - we are creating a set of functions to simplify creating actions.
@@ -9,7 +10,7 @@ const create = ({ title }) => ({
     title,
     id: uuid(),
     createdOn: new Date(),
-  }
+  },
 });
 
 const update = category => ({

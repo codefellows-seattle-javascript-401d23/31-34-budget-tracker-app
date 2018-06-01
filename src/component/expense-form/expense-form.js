@@ -4,13 +4,13 @@ import autoBind from '../../utils/index';
 
 const defaultState = {
   content: '',
-  cost: 0
+  cost: 0,
 };
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.expense || defaultState
+    this.state = this.props.expense || defaultState;
     autoBind.call(this, ExpenseForm);
   }
 
@@ -22,7 +22,7 @@ export default class ExpenseForm extends React.Component {
     event.preventDefault();
     const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
     this.props.onComplete({
-        ...this.state,
+      ...this.state,
       categoryId,
     });
     this.setState(defaultState);
@@ -31,7 +31,6 @@ export default class ExpenseForm extends React.Component {
   render() {
     const { expense } = this.props;
     const buttonText = expense ? 'Update Expense' : 'Create Expense';
-console.log(this.props,'______props_______');
     return (
         <form className='expense-form' onSubmit={this.handleSubmit}>
           <input

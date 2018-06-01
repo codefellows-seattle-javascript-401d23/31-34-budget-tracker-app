@@ -16,12 +16,13 @@ export default (state = defaultState, { type, payload }) => {
     case 'EXPENSE_CREATE':
       categoryId = payload.categoryId; //eslint-disable-line
       categoryExpenses = state[categoryId];
-      updatedExpenses = [ ...categoryExpenses, payload];
+      updatedExpenses = [...categoryExpenses, payload];
       return { ...state, [categoryId]: updatedExpenses };
     case 'EXPENSE_UPDATE':
       categoryId = payload.categoryId; //eslint-disable-line
       categoryExpenses = state[categoryId];
-      updatedExpenses = categoryExpenses.map(expense => (expense.id === payload.id ? payload : expense));
+      updatedExpenses = categoryExpenses.map(expense => (
+        expense.id === payload.id ? payload : expense));
       return { ...state, [categoryId]: updatedExpenses };
     case 'EXPENSE_REMOVE':
       categoryId = payload.categoryId; //eslint-disable-line

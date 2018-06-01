@@ -18,9 +18,9 @@ class Category extends React.Component {
       categoryUpdate,
     } = this.props;
 
-    const categoryExpenses = expenses[category.id];
+    const categoryExpenses = expenses[category.id]; // eslint-disable-line
 
-    return(
+    return (
         <div className='category' key={key}>
           <h1>
             { category.title }
