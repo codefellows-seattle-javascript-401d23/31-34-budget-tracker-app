@@ -17,6 +17,10 @@ a:hover {
   text-decoration: none;
 }
 
-.category-form {
-  margin: 5vw 6.5vw;
+.category {
+  background: $category-background;
+  width: 50%;
+  border: solid 3px black;
+  margin: 5px auto;
+  padding: 5px;
 }

@@ -1,4 +1,4 @@
-## Lab 32
+## Lab 33 
 
 ### Budget Tracker Application
 
@@ -8,3 +8,4 @@ New categories will also have a one to many relationship with expenses, which ca
 ### Tools
 
 Application takes advantage of React and Redux to keep track of state as well as update the state of the application.
+Application also uses session and reporter middleware to notify users in the dev console when actions are dispatched, as well as logging the users actions into local storage. Testing has been implemented for the dashboard component using Jest and Enzyme.

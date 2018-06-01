@@ -32,6 +32,6 @@ describe('#Dashboard', () => {
     const mountedLanding = mount(<Provider store={mockStore(testState)}>
     <Dashboard /></Provider>);
     expect(mountedLanding.find('category-form')).toBeTruthy();
-    expect(mountedLanding.find('category').length).toEqual(2);
+    expect(mountedLanding.find('CategoryItem').length).toEqual(2);
   });
 });
