@@ -4,3 +4,10 @@ $font-color: rgba(0,0,0,0.8);
 $modal-color: rgba(0,0,0,0.4);
 $modal-background: #FFF;
 $error: #ff0000;
+
+.category .updateCategory {
+  display: none;
+}
+.category .updateCategoryShow {
+  display: inline-block;
+}
