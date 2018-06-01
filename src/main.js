@@ -9,7 +9,6 @@ import './style/main.scss';
 import session from './lib/redux-session';
 import reporter from './lib/redux-reporter';
 
-const middleware = {};
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(reporter, session)));
 
 const appContainer = document.createElement('div');

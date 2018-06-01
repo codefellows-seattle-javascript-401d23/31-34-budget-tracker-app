@@ -1,9 +1,12 @@
 @import 'vars';
 
-body {
+html, body {
   background: $background-color;
+  text-align: center;
+  display: block;
   font-family: sans-serif;
   color: $font-color;
+  margin-top: 10px;
 }
 
 a {
@@ -12,4 +15,8 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+.category-form {
+  margin: 5vw 6.5vw;
 }
