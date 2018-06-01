@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { Provider } from 'react-redux';
 import { configure as configureEnzyme, mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import Dashboard from '../component/dashboard/landing';
+import Dashboard from '../component/dashboard/dashboard';
 
 configureEnzyme({ adapter: new Adapter() });
 

@@ -10,12 +10,12 @@ class Expense extends React.Component {
     return (
         <div className='expense'>
           <p> { expense.content } </p>
-          <p> { expense.cost } </p>
-          <button onClick={() => expenseRemove(expense)}>Remove</button>
+          <p> $ { expense.cost } </p>
           <ExpenseForm
             expense={expense}
             onComplete={expenseUpdate}
           />
+          <button onClick={() => expenseRemove(expense)}>Remove</button>
         </div>
     );
   }

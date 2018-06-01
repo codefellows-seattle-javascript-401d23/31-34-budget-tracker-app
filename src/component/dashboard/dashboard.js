@@ -6,12 +6,12 @@ import CategoryForm from '../category-form/category-form';
 import Category from '../category/category';
 
 
-class Landing extends React.Component {
+class Dashboard extends React.Component {
   render() {
     // Josh in the component, our state is linked AS PROPS
     const { categories, categoryCreate } = this.props;
     return (
-        <div className='landing'>
+        <div className='dashboard'>
           <CategoryForm onComplete={ categoryCreate }/>
           {
             categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
@@ -21,14 +21,14 @@ class Landing extends React.Component {
   }
 }
 
-Landing.propTypes = {
+Dashboard.propTypes = {
   categories: PropTypes.array,
   categoryCreate: PropTypes.func,
 };
 
 // Josh - below to read the state
 const mapStateToProps = (state) => {
-  // the object we return WILL BECOME PROPS for landing
+  // the object we return WILL BECOME PROPS for dashboard
   return {
     categories: state.categories,
   };
@@ -42,6 +42,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
-// Josh - above we are curring Landing
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+// Josh - above we are curring Dashboard
 // connect function connects to the STATE that need
