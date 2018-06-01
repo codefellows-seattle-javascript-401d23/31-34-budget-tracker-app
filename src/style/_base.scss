@@ -6,12 +6,29 @@ body {
   color: $font-color;
 }
 
-a {
-  color: $font-color;
+header {
+  text-align: center;
+  background: $header-bkg-clr;
+}
+form {
+  margin-left: 25%;
 }
 
-a:hover {
-  text-decoration: none;
+#category-form {
+  background: $category-color;
+}
+#category {
+  margin-left: 15%;
+}
+
+#expense {
+  background: $expense-color;
+  margin-left: 20%;
+}
+
+#expense-form {
+  background: $expense-form;
+  margin-left: 5%;
 }
 
 .error {

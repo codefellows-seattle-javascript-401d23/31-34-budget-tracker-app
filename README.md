@@ -1,5 +1,6 @@
 
 # LAB 33  UA Budget Category Tracker
+[![Build Status](https://travis-ci.org/Joshua-Fredrickson/31-34-budget-tracker-app.svg?branch=master)](https://travis-ci.org/Joshua-Fredrickson/31-34-budget-tracker-app)
 
 
 **Author**: Joshua Fredrickson
@@ -54,4 +55,5 @@ Node.js, npm, React, Redux, babel, jest, eslint, JavaScript
 
 
 ## Credits and Colaborations
-Special thanks to all of the Code Fellows staff, TA's, Brian Bixby and fellow 401-d23 students.
+Special thanks to all of the Code Fellows staff, TA's, Melanie Downing, Brian Bixby and fellow 
+401-d23 students.
