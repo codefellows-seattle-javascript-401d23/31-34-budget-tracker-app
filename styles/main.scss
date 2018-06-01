@@ -1,0 +1,75 @@
+@import 'normalize';
+@import 'base';
+
+.app {
+  display: block;
+  max-width: 90%;
+  margin: 10% auto;
+  }
+.dashboard{
+ margin-top: $spacing;
+  
+}
+.budget {
+  background-color: yellow;
+  width: 50% - $spacing;
+  float: right;
+}
+.budget h1 {
+  text-align: right;
+  font-size: $header-font - 1vw;
+  background-color: pink;
+}
+.category {
+  margin-top: $spacing;
+  background-color: fuchsia;
+
+}
+.category h1 {
+  background-color: teal;
+  width: 50%;
+  float: left;
+}
+.category-form {
+  margin-top: 3px;
+  width: 35%;
+  float: right;
+}
+.category-form button {
+  font-size: $button-font;
+  width: inherit;
+  float: right;
+}
+.category-delete {
+  float: right;
+  font-size: $button-font;
+}
+.category-form input {
+  font-size: $p-font;
+}
+.expense-form {
+  margin-top: 3px;
+  width: 45%;
+  float: left;
+}
+.expense {
+  background-color: orange;
+}
+.expense p {
+ width: 50%;
+  background-color: aqua;
+  float: left;
+}
+
+input {
+  margin-left: $spacing;
+}
+button {
+  margin-left: 2%;
+}
+
+// 
+// TODO: Add styling to your To Do App! make it look nice :
+// --------------------------------------------------------------------------------------
+// no need do too much here for now, later will have layout stuff, but for now just knitting our files together
+// --------------------------------------------------------------------------------------
