@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/index';
 
-const defaultState = { content: '' };
+const defaultState = {
+  content: '',
+  cost: 0
+};
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -12,7 +15,7 @@ export default class ExpenseForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ content: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit(event) {
@@ -34,8 +37,17 @@ console.log(this.props,'______props_______');
           <input
             type='text'
             name='content'
-            placeholder='Expense'
+            placeholder='Expense Name'
             value={this.state.content}
+            onChange={this.handleChange}
+            />
+          <input
+            type='number'
+            name='cost'
+            step='.01'
+            min='0'
+            placeholder='Cost $'
+            value={this.state.cost}
             onChange={this.handleChange}
             />
           <button type='submit'> {buttonText} </button>
