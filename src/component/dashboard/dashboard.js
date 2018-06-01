@@ -8,12 +8,17 @@ import Category from '../category/category';
 class Dashboard extends React.Component {
   render() {
     const { categories, categoryCreate } = this.props;
+
+      // console.log("categories", categories);
+
     return (
       <div className='dashboard'>
-        <h1>Welcome to the Dashboard</h1>
+        <h1>Add a Budget Category Here!</h1>
+        <p>Budget categories should be things like transportation, housing, food, etc... </p>
         <CategoryForm onComplete={categoryCreate}/>
-        {
+        { categories ?
           categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
+          : undefined
         }
       </div>
     );
@@ -26,8 +31,9 @@ Dashboard.propTypes = {
 };
 
 const mapStateToProps = (state) => {
+  // console.log(state, 'state in DASHBOARD');
   return {
-    categories: state,
+    categories: state.category,
   };
 };
 
