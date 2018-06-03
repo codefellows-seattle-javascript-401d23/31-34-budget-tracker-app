@@ -1,0 +1,29 @@
+$background-color: #949090;
+$font-color: pink; // naming: primary colors, secondary cols, highlight
+$error: #ff0000;
+$modal-color: rgba(0,0,0,0.4);
+$modal-background: #FFF;
+$button-margin: 15px;
+html, body {
+  background: $background-color;
+}
+
+p,h1,h2,ul {
+  color: $font-color;
+}
+button {
+  background-color:pink;
+  padding: 4px;
+  margin: $button-margin;
+}
+.error {
+  border-color:$error;
+}
+.title {
+  color: black;
+  font-size: 20px;
+}
+input {
+  padding: 8px;
+  margin-right: 7px;
+}

@@ -1,83 +1,51 @@
-401 JS --  Lab 31 Budget Tracker
-===
+# Budget Tracker
+**Author**: Joanna Coll
+**Version**: 1.0.0 
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a pull request from your working branch to the master branch of your own forked repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  
-## Requirements  
-#### Configuration  
-Your lab directory must include  
-* **README.md** -- with a documention about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.common.js** -- with webpack config
-* **webpack.dev.js** -- with webpack config
-* **src/** -- containing the front end code
-* **src/main.js** -- containing the entire app
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+## Overview
 
-## Feature Tasks 
-#### Category 
-* in this app a category should contain at least the following properties
-  * `id` a uuid
-  * `timestamp` a date from when the category was created
-  * `name` a string that is the name of the category
-  * `budget` a number that is the total amount of $ in the category 
-  * feel free to add more to your categories if you want
+This app lets the user input data to create category names and budget related to it. It has a dashboard where the user can add the new notes with the name and budget and remove each of them with a click. The new version of the app uses reducer, store, provider and action files to control all the state changes and handle the changes.
 
-#### redux
-###### reducer
-* create a category reducer in your your reducer directory
-* this reducer should support the following interactions 
+## Getting Started
+
+1. To start you need to install all the necessary dependencies and create all the directories.
+2. Start with building webpack.common.js and webpack.dev.js files and utils to pre-define functions bind.
+3. Create reducer, store and action files. 
+4. Create state that contains: uuid,name, budget,timestamp.
+5. Reducer should contain  the following:
   * `CATEGORY_CREATE`
   * `CATEGORY_UPDATE`
   * `CATEGORY_DESTORY`
-
-###### action creaters
-* you should create an action creater for each interaction supported by your category reducer
-
-#### Components
-Create the following components and structure them according to the following diagram.  
-```
-Provider
+  
+6. Actions file needs to create actions for all the interactions added to reducer.
+7. Create following files to hold components for: dashboard, category form, category item, and app.
+```Provider
   App 
     BrowserRouter
       Route / Dashboard
         CategoryForm -- for creating categories
         [CategoryItem]
-           CategoryForm  -- for updating categories
-```
+           CategoryForm  -- for updating categories```
+8. Connect some components with action file. 
+9. Create routes inside app file.
+10. Make sure Dashboard displays on the'/' route and connects to map state and dispatchable methods to props.
+11. Add CategoryForm and CategoryItem to render() function.
+12. Add the UI state inside the CategoryForm and pass it to CategoryItem.
+13. Use onComplete function to invoke when the form gets submitted.
+14. Made sure CategoryItem renders and displays name and budget. 
+15. Import Category prop from Dashboard to display: delete 'onClick' button and update 'onComplete' button.
+14. Render all the components into HTML.
+8. Change scss file accordingly.
 
-###### App Component 
-The App component should setup the single page applicaion routes
 
-###### Dashboard Component 
-* should be displayed on the `/` route
-* should use react-redux's `connect` to map state and dispatchable methods to props
-* should display a `CategoryForm` for adding categories to the app state
-* should display a `CategoryItem` for each category in the app state
+## Architecture
+JavaScript, Node.js, Airbnb package, babel, Sass, React, Enzyme, Jest, other dependencies
 
-###### CategoryForm Component
-* should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForms State when the form is submitted
-* should support an optional `category` prop that will initialize the state of the form
+## Change Log
 
-###### CategoryItem Component
-* should display the category's name and budget
-* should receive a category prop from Dashboard
-* should display a delete button
-  * `onClick` the category should be removed from the application state
-* should display a CategoryForm  
-  * `onComplete` the form should update the component in the application state
+05-12-2018 6:00pm - The application is finished.
+05-12-2018 10:30pm - Finished writing README.md
 
-##  Documentation  
-Write a description of the project in your README.md
+
+
+
