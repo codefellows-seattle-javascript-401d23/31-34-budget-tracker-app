@@ -1,83 +1,44 @@
-401 JS --  Lab 31 Budget Tracker
-===
+# Lab 33: Budget Tracker - Redux Middleware
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Submit a pull request to this repository
-  * Submit a pull request from your working branch to the master branch of your own forked repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
-  
-## Requirements  
-#### Configuration  
-Your lab directory must include  
-* **README.md** -- with a documention about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.common.js** -- with webpack config
-* **webpack.dev.js** -- with webpack config
-* **src/** -- containing the front end code
-* **src/main.js** -- containing the entire app
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+# Overview
 
-## Feature Tasks 
-#### Category 
-* in this app a category should contain at least the following properties
-  * `id` a uuid
-  * `timestamp` a date from when the category was created
-  * `name` a string that is the name of the category
-  * `budget` a number that is the total amount of $ in the category 
-  * feel free to add more to your categories if you want
+This is a lab assignment from Code Fellows 401 - Javascript. The objective was to build a simple Budget Tracker App with React components and Redux for state management. The completed project contains a route to dashboard page where a user can enter a category budget item by name and expense type and price.  Onclick the category item is saved to the state of the application and renders into a list of category items below.  Once a category is added to the state of the application, a user can delete the item removing it from the state of the application.  A user can also add an expense type and price as part of a category with the functionality to edit and/or delete that expense.    
 
-#### redux
-###### reducer
-* create a category reducer in your your reducer directory
-* this reducer should support the following interactions 
-  * `CATEGORY_CREATE`
-  * `CATEGORY_UPDATE`
-  * `CATEGORY_DESTORY`
+## Getting Started
 
-###### action creaters
-* you should create an action creater for each interaction supported by your category reducer
+In order to get started with this code please fork and clone the repo. You will need a number of dependencies in order to run this project. See the package.json for a list of dependencies. This project runs via a webpack build. There is a script that will give you a development version of the project, npm run watch. This script enables webpack-dev-server which hot reloads the build based on changes to the code and will open a local version of the project in your browser.
 
-#### Components
-Create the following components and structure them according to the following diagram.  
-```
-Provider
-  App 
-    BrowserRouter
-      Route / Dashboard
-        CategoryForm -- for creating categories
-        [CategoryItem]
-           CategoryForm  -- for updating categories
-```
+## Architecture
 
-###### App Component 
-The App component should setup the single page applicaion routes
+This project is built using Javascript ES6 with transpilation using Babel. The code is bundled via webpack. 
+- Main.js contains an entry point to the React Application and contains the store which holds the application state.
+- Reducer/category.js:  This module contains the the reducer function that takes in the previous state and returns a new application state.  It can create a category, update a category or destroy a category.
+- Action/category.js:  This module contains the action functions which are part of the reducer.  It defines the create, update and destroy reducer functions.
+- App.js: this component that contains a route to dashboard and is a static component. 
+- Dashboard.js:  This module connects to Redux via a connect function and exports the mapStateToProps and mapDisPatchToProps functions.  It also displays the rendered category form and categories.
+- Category-form.js:  This component contains a class CategoryForm which contains a form that allow's users to input a category name and budget amount which is rendered on the dashboard component.  It also contains a handleSubmit and handleChange function which allows input from the form buttons to change the state of the application via the reducer functions.
+- Category/category.js:  This component contains the category item which can be created via the categoryForm.
+- Expense-form.js:  This component contains a class expenseForm which contains a form that allow's users to enter an expense and price that will be associated with a category.  
+- Expense.js:  This component contains the expense item which is created via the expense-form.js component.
 
-###### Dashboard Component 
-* should be displayed on the `/` route
-* should use react-redux's `connect` to map state and dispatchable methods to props
-* should display a `CategoryForm` for adding categories to the app state
-* should display a `CategoryItem` for each category in the app state
+## Redux Middleware
 
-###### CategoryForm Component
-* should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForms State when the form is submitted
-* should support an optional `category` prop that will initialize the state of the form
+- redux-reporter.js:  
+This module sets up redux middleware console message that reports out in the following cases:
+    - ACTION:  When an action is dispactched by a component a console message will log that includes the action type and payload.
+    - STATE: When the redux store changes state, a console message will log  detailing the updated state.
+    - ERROR: IN the event that there is an error in the redux middleware chain, an error message will be logged to the console.
+    
+- redux-session.js:  
+This module sets up a middleware function call that iterates over the redux store object and calls a next callback when an action is dispatched to change the state of the redux store.  If does this by currying multiple callbacks and storing the result of an action into a result binding and current state of the store into a state binding.
+ 
+## Change Log
 
-###### CategoryItem Component
-* should display the category's name and budget
-* should receive a category prop from Dashboard
-* should display a delete button
-  * `onClick` the category should be removed from the application state
-* should display a CategoryForm  
-  * `onComplete` the form should update the component in the application state
+- 05-31-2018 8:00pm - 9:00pm - built test suite and researched testing with enzyme
+- 05-31-2018 9:00pm - 10:00pm - Added redux-reporter and redux-session modules  
+- 05-31-2018 10:00pm - 12:00pm - worked on testing 
+- 05-31-2018 7:30am - 8:00am - documentation
 
-##  Documentation  
-Write a description of the project in your README.md
+## Credits and Collaborations
+
+Thanks Judy Vue for the demo code and Nicole Weese for help with debugging.
