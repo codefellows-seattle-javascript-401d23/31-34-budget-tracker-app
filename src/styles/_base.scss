@@ -1,0 +1,59 @@
+@import 'vars';
+
+body {
+  background-color: $background-color;
+  font-family: sans-serif;
+  color: $font-color;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+a,h1,h2,p,input,button {
+  color: $font-color;
+}
+
+h1 {
+  font-size: $header-font-size;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: $font-size;
+  margin: 10px;
+}
+
+.dashboard {
+  background-color: $box-color;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px; 
+}
+
+.category-form {
+  width: 500px;
+}
+
+input {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: $font-size;
+  
+}
+
+button {
+  background-color: $background-color;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 20px;
+  font-size: $font-size;
+  
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.error {
+  color: $error;
+}
