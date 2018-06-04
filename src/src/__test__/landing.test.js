@@ -33,6 +33,6 @@ describe('#Landing', () => {
     console.log(mountedLanding.html());
 
     expect(mountedLanding.find('CategoryForm')).toBeTruthy();
-    expect(mountedLanding.find('Category').length).toHaveLength(2);
+    expect(mountedLanding.find('Category').length).toEqual(2);
   });
 });

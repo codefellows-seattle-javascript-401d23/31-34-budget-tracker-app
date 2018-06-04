@@ -1,69 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autoBind from './../../utils/index';
+import { connect } from 'react-redux';
+import CategoryForm from '../category-form/category-form';
+import ExpenseForm from './../expense-form/expense-form';
+import Expense from '../expense/expense';
+import * as expenseActions from '../../action/expense';
+import * as categoryActions from '../../action/category';
 
-const emptyState = { content: '', budget: '' };
-
-
-export default class ExpenseForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = props.expense || emptyState;
-    autoBind.call(this, ExpenseForm);
-  }
-
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
-
-    // Zachary - lines 24 - 27 are the same as lines 29 - 33.
-    // {
-    //   content: 'some content',
-    //   categoryId: categoryid,
-    // }
-
-    this.props.onComplete({
-      ...this.state,
-      categoryId,
-    });
-    this.setState(emptyState);
-  }
-
+class Category extends React.Component {
   render() {
-    const { expense } = this.props;
-    const buttonText = expense ? 'Update' : 'Create';
+    const {
+      expenses,
+      expenseCreate,
+      category,
+      key,
+      categoryRemove,
+      categoryUpdate,
+    } = this.props;
 
+    const categoryExpenses = expenses[category.id];
     return (
-      <form
-        className="expense-form"
-        onSubmit={this.handleSubmit}
-      >
-        <input
-          type="text"
-          name="content"
-          placeholder="expense"
-          value={this.state.content}
-          onChange={this.handleChange}
-        />
-        <input
-          type="number"
-          name="budget"
-          placeholder="Budget"
-          value={this.state.budget}
-          onChange={this.handleChange}
-        />
-        <button type="submit"> {buttonText} </button>
-      </form>
+      <div className='category' key={key}>
+        <h1> {category.title} : ${category.budget}</h1>
+        <button onClick={() => categoryRemove(category)}> Delete </button>
+        <CategoryForm category={category} onComplete={categoryUpdate} />
+        <ExpenseForm category={category} onComplete={expenseCreate} />
+        <div className="expense-list">
+          {categoryExpenses.map(expense => <Expense expense={expense} key={expense.id} />)}
+        </div>
+      </div>
     );
   }
 }
 
-ExpenseForm.propTypes = {
-  onComplete: PropTypes.func,
+Category.propTypes = {
+  expenses: PropTypes.object,
+  expenseCreate: PropTypes.func,
   category: PropTypes.object,
-  expense: PropTypes.object,
+  key: PropTypes.number,
+  categoryRemove: PropTypes.func,
+  categoryUpdate: PropTypes.func,
 };
+
+const mapStateToProps = state => ({
+  expenses: state.expenses,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    expenseCreate: data => dispatch(expenseActions.createAction(data)),
+    categoryRemove: data => dispatch(categoryActions.remove(data)),
+    categoryUpdate: data => dispatch(categoryActions.update(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

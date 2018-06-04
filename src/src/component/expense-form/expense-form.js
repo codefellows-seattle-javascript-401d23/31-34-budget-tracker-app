@@ -4,11 +4,11 @@ import autoBind from './../../utils/index';
 
 const emptyState = { content: '' };
 
-export default class CardForm extends React.Component {
+export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.card || emptyState;
-    autoBind.call(this, CardForm);
+    this.state = props.expense || emptyState;
+    autoBind.call(this, ExpenseForm);
   }
 
   handleChange(event) {
@@ -17,29 +17,28 @@ export default class CardForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const sectionId = this.props.section ? this.props.section.id : this.props.card.sectionId;
+    const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
 
     // Zachary - lines 24 - 27 are the same as lines 29 - 33.
     // {
     //   content: 'some content',
-    //   sectionId: sectionid,
+    //   categoryId: categoryid,
     // }
 
     this.props.onComplete({
       ...this.state,
-      sectionId, 
+      categoryId, 
     });
     this.setState(emptyState);
   }
 
   render() {
-    console.log('LKDJLKJSDLKFJLKSJDFLJK', this.state);
-    const { card } = this.props;
-    const buttonText = card ? 'Update Card' : 'Create Card';
+    const { expense } = this.props;
+    const buttonText = expense ? 'Update Expense' : 'Create Expense';
 
     return (
       <form
-        className="card-form"
+        className="expense-form"
         onSubmit={this.handleSubmit}
       >
         <input
@@ -55,8 +54,8 @@ export default class CardForm extends React.Component {
   }
 }
 
-CardForm.propTypes = {
+ExpenseForm.propTypes = {
   onComplete: PropTypes.func,
-  section: PropTypes.object,
-  card: PropTypes.object,
+  category: PropTypes.object,
+  expense: PropTypes.object,
 };
